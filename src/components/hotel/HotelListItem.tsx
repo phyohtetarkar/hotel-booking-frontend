@@ -1,11 +1,9 @@
-import {
-  ChevronRightIcon,
-  MapIcon,
-  MapPinIcon
-} from "@heroicons/react/24/solid";
+import { MapPinIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function HotelListItem() {
+  const router = useRouter();
   return (
     <div className="card">
       <div className="ratio ratio-4x3 card-img-top d-block d-md-none">
@@ -51,7 +49,14 @@ function HotelListItem() {
                 </div>
               </div>
               <div className="flex-grow-1"></div>
-              <button className="btn btn-outline-primary">Select</button>
+              <button
+                className="btn btn-outline-primary"
+                onClick={() => {
+                  router.push("/hotels/10");
+                }}
+              >
+                Select
+              </button>
             </div>
           </div>
         </div>

@@ -138,7 +138,7 @@ export default function Home() {
                                 <div className="input-group">
                                   <button
                                     type="button"
-                                    className="btn btn-outline-primary"
+                                    className="btn btn-outline-primary border-end-0"
                                   >
                                     <MinusIcon width={20} />
                                   </button>
@@ -151,7 +151,7 @@ export default function Home() {
                                   ></input>
                                   <button
                                     type="button"
-                                    className="btn btn-outline-primary"
+                                    className="btn btn-outline-primary border-start-0"
                                   >
                                     <PlusIcon width={20} />
                                   </button>
@@ -166,7 +166,7 @@ export default function Home() {
                                 <div className="input-group">
                                   <button
                                     type="button"
-                                    className="btn btn-outline-primary"
+                                    className="btn btn-outline-primary border-end-0"
                                   >
                                     <MinusIcon width={20} />
                                   </button>
@@ -179,7 +179,7 @@ export default function Home() {
                                   ></input>
                                   <button
                                     type="button"
-                                    className="btn btn-outline-primary"
+                                    className="btn btn-outline-primary border-start-0"
                                   >
                                     <PlusIcon width={20} />
                                   </button>
@@ -194,7 +194,7 @@ export default function Home() {
                                 <div className="input-group">
                                   <button
                                     type="button"
-                                    className="btn btn-outline-primary"
+                                    className="btn btn-outline-primary border-end-0"
                                   >
                                     <MinusIcon width={20} />
                                   </button>
@@ -207,7 +207,7 @@ export default function Home() {
                                   ></input>
                                   <button
                                     type="button"
-                                    className="btn btn-outline-primary"
+                                    className="btn btn-outline-primary border-start-0"
                                   >
                                     <PlusIcon width={20} />
                                   </button>

@@ -254,7 +254,7 @@ function Header({ hideAuth }: HeaderProps) {
                 <div className="flex-grow-1"></div>
                 <ul className="navbar-nav align-items-lg-center gap-2">
                   <li className="nav-item d-block d-lg-none">
-                    <NavLink href="/products">Hotels</NavLink>
+                    <NavLink href="/hotels">Hotels</NavLink>
                   </li>
                 </ul>
 
