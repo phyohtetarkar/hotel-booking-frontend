@@ -7,9 +7,9 @@ function ProfileSetting() {
     return (
       <div>
         <div className="bg-primary">
-          <div className="container" style={{ height: 120 }}>
-            <div className="d-flex align-items-center h-100">
-              <h1 className="text-light">Profile Setting</h1>
+          <div className="container">
+            <div className="py-4 py-lg-5">
+              <h1 className="text-light text-center text-lg-start">Profile Setting</h1>
             </div>
           </div>
         </div>
@@ -69,9 +69,7 @@ function ProfileSetting() {
                           style={{ width: 128, height: 128 }}
                         >
                           <Image
-                            src=""
-                            width={128}
-                            height={128}
+                            src="/images/profile.png"
                             alt="User Photo"
                             className="rounded-circle"
                             fill={true}

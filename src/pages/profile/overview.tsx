@@ -6,9 +6,9 @@ function ProfileOverview() {
     return (
       <div>
         <div className="bg-primary">
-          <div className="container" style={{ height: 120 }}>
-            <div className="d-flex align-items-center h-100">
-              <h1 className="text-light">Profile Overview</h1>
+          <div className="container">
+            <div className="py-4 py-lg-5">
+              <h1 className="text-light text-center text-lg-start">Profile Overview</h1>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@ function ProfileOverview() {
                   <div className="hstack">
                     <div className="position-relative flex-shrink-0">
                       <Image
-                        src=""
+                        src="/images/profile.png"
                         width={60}
                         height={60}
                         alt=""

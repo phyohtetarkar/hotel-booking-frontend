@@ -1,4 +1,4 @@
-import { BuildingStorefrontIcon, ClipboardIcon, Cog8ToothIcon, HeartIcon, UserIcon } from "@heroicons/react/24/outline";
+import { BuildingOffice2Icon, BuildingStorefrontIcon, ClipboardIcon, Cog8ToothIcon, HeartIcon, UserIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
@@ -50,6 +50,11 @@ function AccountMenu({}) {
           href: "/profile/saved",
           title: "My saved",
           icon: <HeartIcon className="me-2" strokeWidth={2} width={iconSize} />
+        })}
+        {menuLink({
+          href: "/profile/hotels",
+          title: "My hotels",
+          icon: <BuildingOffice2Icon className="me-2" strokeWidth={2} width={iconSize} />
         })}
         {menuLink({
           href: "/profile/setting",
