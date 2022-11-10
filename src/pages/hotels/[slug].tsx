@@ -235,29 +235,35 @@ function HotelDetail() {
       </div>
 
       <div className="container py-3">
-        <div className="card">
-          <div className="card-body">
-            <div className="hstack">
-              <h2 className="flex-grow-1">Ostello Bello Bagan</h2>
-              <div className="mt-1">
-                <small className="small text-muted">Starting from</small>
-                <div className="hstack align-items-baseline">
-                  <h4 className="mb-0">MMK 10,000</h4>
-                  <small className="text-muted ms-1">/ per night</small>
+        <div className="row mb-3">
+          <div className="col-lg-12">
+            <div className="card">
+              <div className="card-body">
+                <div className="hstack">
+                  <div className="vstack">
+                    <h4>Bagan View Hotel</h4>
+                    <div className="hstack gap-1 text-muted mb-3">
+                      <MapPinIcon width={16} />
+                      <span className="small">9 jasmin Road, New Bagan</span>
+                    </div>
+                  </div>
+                  <div className="flex-grow-1"></div>
+                  <div className="hstack align-items-start">
+                    <div>
+                      <small className="text-muted">Starting from</small>
+                      <div className="hstack align-items-baseline">
+                        <h4 className="mb-0">MMK 50,000</h4>
+                        <small className="text-muted ms-1">/ per night</small>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div className="hstack gap-1 text-muted">
-              <MapPinIcon width={20} />
-              <span>Hkan Latt Quarter, Main Road New Bagan, Myanmar</span>
-            </div>
           </div>
         </div>
-      </div>
 
-      <div className="container">
-        <div className="row g-3">
+        <div className="row g-3 mb-3">
           <div className="col-lg-8">
             <div className="ratio ratio-16x9 d-lg-block">
               <Image
@@ -272,43 +278,67 @@ function HotelDetail() {
             <div className="vstack gap-3 h-100">
               <div className="card h-100">
                 <div className="card-header bg-white">
-                  <h5 className="mt-2"> Most Popular Facilities</h5>
+                  <h5 className="mt-2"> Most Popular Amenities</h5>
                 </div>
                 <div className="card-body">
                   <div className="row g-3">
                     <div className="col-lg-6 col-md-auto">
-                      <div className="hstack gap-2">
-                        <WifiIcon width={25} color={"green"} />
+                      <div className="hstack gap-2 align-items-start">
+                        <WifiIcon
+                          width={25}
+                          color={"green"}
+                          className="flex-shrink-0"
+                        />
                         <span className="">Free Wifi</span>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-auto">
-                      <div className="hstack gap-2">
-                        <WifiIcon width={25} color={"green"} />
+                      <div className="hstack gap-2 align-items-start">
+                        <WifiIcon
+                          width={25}
+                          color={"green"}
+                          className="flex-shrink-0"
+                        />
                         <span>Excellent breakfast</span>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-auto">
-                      <div className="hstack gap-2">
-                        <WifiIcon width={25} color={"green"} />
+                      <div className="hstack gap-2 align-items-start">
+                        <WifiIcon
+                          width={25}
+                          color={"green"}
+                          className="flex-shrink-0"
+                        />
                         <span>Non-smoking rooms</span>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-auto">
-                      <div className="hstack gap-2">
-                        <WifiIcon width={25} color={"green"} />
+                      <div className="hstack gap-2 align-items-start">
+                        <WifiIcon
+                          width={25}
+                          color={"green"}
+                          className="flex-shrink-0"
+                        />
                         <span>Swimming pool</span>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-auto">
-                      <div className="hstack gap-2">
-                        <WifiIcon width={25} color={"green"} />
+                      <div className="hstack gap-2 align-items-start">
+                        <WifiIcon
+                          width={25}
+                          color={"green"}
+                          className="flex-shrink-0"
+                        />
                         <span>Family rooms</span>
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-auto">
-                      <div className="hstack gap-2">
-                        <WifiIcon width={25} color={"green"} />
+                      <div className="hstack gap-2 align-items-start">
+                        <WifiIcon
+                          width={25}
+                          color={"green"}
+                          className="flex-shrink-0"
+                        />
                         <span>Bar</span>
                       </div>
                     </div>
@@ -322,7 +352,210 @@ function HotelDetail() {
           </div>
         </div>
 
-        <div className="row g-3 py-3">
+        <div className="row g-3 mb-3">
+          <div>
+            <div className="card border-0 shadow-sm">
+              <div className="card-body">
+                <form className="row align-items-end g-3">
+                  <div className="col-12 col-lg">
+                    <label className="form-label">Check In</label>
+
+                    <Popover
+                      renderReferenceElement={(handleClick) => {
+                        return (
+                          <div className="input-group">
+                            <Input
+                              placeholder="Check in date"
+                              readonly
+                              onClick={handleClick}
+                              value={checkInDate.toDateString()}
+                              onChange={() => {}}
+                            />
+                            <span className="input-group-text">
+                              <CalendarDaysIcon width={20} />
+                            </span>
+                          </div>
+                        );
+                      }}
+                      renderPopperElement={(close) => {
+                        return (
+                          <Calendar
+                            onChange={(d: Date) => {
+                              setCheckInDate(d);
+                              close();
+                            }}
+                            value={checkInDate}
+                            locale="en-US"
+                            className={"shadow-lg mt-1 border z"}
+                            tileClassName={({
+                              activeStartDate,
+                              date,
+                              view,
+                            }) => {
+                              const activeClass = "bg-primary text-light";
+                              if (
+                                view === "month" &&
+                                date.toDateString() ===
+                                  checkInDate.toDateString()
+                              ) {
+                                return activeClass;
+                              }
+
+                              if (
+                                view === "year" &&
+                                date.getMonth() === checkInDate.getMonth()
+                              ) {
+                                return activeClass;
+                              }
+
+                              if (
+                                view === "decade" &&
+                                date.getFullYear() === checkInDate.getFullYear()
+                              ) {
+                                return activeClass;
+                              }
+                              return "";
+                            }}
+                          />
+                        );
+                      }}
+                    />
+                  </div>
+                  <div className="col-12 col-lg">
+                    <label className="form-label">Check Out</label>
+                    <div className="input-group">
+                      <Input
+                        placeholder="Check out date"
+                        value={checkOutDate.toDateString()}
+                        onChange={() => {}}
+                        readonly
+                      />
+                      <span className="input-group-text">
+                        <CalendarDaysIcon width={20} />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="col-12 col-lg">
+                    <Popover
+                      renderReferenceElement={(handleClick) => {
+                        return (
+                          <Input
+                            label="Room &amp; guests"
+                            value="2 adults - 0 children - 1 room"
+                            readonly
+                            onClick={() => handleClick()}
+                          />
+                        );
+                      }}
+                      renderPopperElement={(close) => {
+                        return (
+                          <div className="p-4 bg-white shadow-lg border">
+                            <div className="vstack gap-3">
+                              <div className="hstack">
+                                <h6 className="mb-0" style={{ width: 100 }}>
+                                  Adult
+                                </h6>
+                                <div>
+                                  <div className="input-group">
+                                    <button
+                                      type="button"
+                                      className="btn btn-outline-primary border-end-0"
+                                    >
+                                      <MinusIcon width={20} />
+                                    </button>
+                                    <input
+                                      type="text"
+                                      className="form-control text-center border-primary"
+                                      value={1}
+                                      readOnly
+                                      style={{ maxWidth: 46 }}
+                                    ></input>
+                                    <button
+                                      type="button"
+                                      className="btn btn-outline-primary border-start-0"
+                                    >
+                                      <PlusIcon width={20} />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="hstack">
+                                <h6 className="mb-0" style={{ width: 100 }}>
+                                  Children
+                                </h6>
+                                <div>
+                                  <div className="input-group">
+                                    <button
+                                      type="button"
+                                      className="btn btn-outline-primary border-end-0"
+                                    >
+                                      <MinusIcon width={20} />
+                                    </button>
+                                    <input
+                                      type="text"
+                                      className="form-control text-center border-primary"
+                                      value={1}
+                                      readOnly
+                                      style={{ maxWidth: 46 }}
+                                    ></input>
+                                    <button
+                                      type="button"
+                                      className="btn btn-outline-primary border-start-0"
+                                    >
+                                      <PlusIcon width={20} />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="hstack">
+                                <h6 className="mb-0" style={{ width: 100 }}>
+                                  Room
+                                </h6>
+                                <div>
+                                  <div className="input-group">
+                                    <button
+                                      type="button"
+                                      className="btn btn-outline-primary border-end-0"
+                                    >
+                                      <MinusIcon width={20} />
+                                    </button>
+                                    <input
+                                      type="text"
+                                      className="form-control text-center border-primary"
+                                      value={1}
+                                      readOnly
+                                      style={{ maxWidth: 46 }}
+                                    ></input>
+                                    <button
+                                      type="button"
+                                      className="btn btn-outline-primary border-start-0"
+                                    >
+                                      <PlusIcon width={20} />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      }}
+                    ></Popover>
+                  </div>
+                  <div className="col-12 col-lg-auto">
+                    <button
+                      className="btn btn-primary px-4 w-100"
+                      style={{ height: formControlHeight }}
+                    >
+                      Change search
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row g-3 mb-3">
           <div className="col-lg-8">
             <div className="card h-100">
               <div className="card-header bg-white">
@@ -363,28 +596,29 @@ function HotelDetail() {
                     </div>
                   </div>
                   <div className="col-lg-4">
-                    <div className="vstack gap-2">
-                      <h5 className="fw-medium">Price for 3 nights</h5>
-                      <h5 className="fw-light">MMK 50,000</h5>
-                      <h5 className="small text-danger mt-3">
-                        * Only 3 rooms left on our site
-                      </h5>
+                    <div className="hstack align-items-start">
+                      <div>
+                        <small className="text-muted">Price for 3 nights</small>
+                        <div className="hstack align-items-baseline">
+                          <h4 className="mb-0">MMK 50,000</h4>
+                          <small className="text-muted ms-1">/ per night</small>
+                        </div>
+                      </div>
                     </div>
+                    <h5 className="small text-danger mt-3">
+                      * Only 3 rooms left on our site
+                    </h5>
                   </div>
                   <div className="col-lg-2">
-                    <div className="vstack gap-2">
-                      <h5 className="fw-medium">Select room</h5>
-                      <Select>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                      </Select>
-                    </div>
+                    <Select label="Select room">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </Select>
                   </div>
 
                   <hr className="bg-dark-gray my-4" />
                 </div>
-
                 <div className="row g-3">
                   <div className="col-lg-6">
                     <div className="vstack gap-2">
@@ -392,59 +626,7 @@ function HotelDetail() {
                         className="fw-medium text-decoration-underline"
                         style={{ color: "blue" }}
                       >
-                        Deluxe Room
-                      </h5>
-                      <div className="hstack gap-3">
-                        <div className="hstack gap-2">
-                          <span>1 double bed</span>
-                          <CheckCircleIcon width={25} />
-                        </div>
-                        <div className="hstack gap-2">
-                          <span>2 x adults</span>
-                          <UserGroupIcon width={25} />
-                        </div>
-                      </div>
-                      <div className="mt-3">
-                        <span
-                          className="small fw-bold"
-                          style={{ color: "blue" }}
-                        >
-                          View detail
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4">
-                    <div className="vstack gap-2">
-                      <h5 className="fw-medium">Price for 3 nights</h5>
-                      <h5 className="fw-light">MMK 100,000</h5>
-                      <h5 className="small text-danger mt-3">
-                        * Only 3 rooms left on our site
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="col-lg-2">
-                    <div className="vstack gap-2">
-                      <h5 className="fw-medium">Select room</h5>
-                      <Select>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                      </Select>
-                    </div>
-                  </div>
-
-                  <hr className="bg-dark-gray my-4" />
-                </div>
-
-                <div className="row g-3">
-                  <div className="col-lg-6">
-                    <div className="vstack gap-2">
-                      <h5
-                        className="fw-medium text-decoration-underline"
-                        style={{ color: "blue" }}
-                      >
-                        Premier Deluxe Room
+                        Standard Room
                       </h5>
                       <div className="hstack gap-3">
                         <div className="hstack gap-2">
@@ -471,23 +653,82 @@ function HotelDetail() {
                     </div>
                   </div>
                   <div className="col-lg-4">
-                    <div className="vstack gap-2">
-                      <h5 className="fw-medium">Price for 3 nights</h5>
-                      <h5 className="fw-light">MMK 200,000</h5>
-                      <h5 className="small text-danger mt-3">
-                        * Only 1 room left on our site
-                      </h5>
+                    <div className="hstack align-items-start">
+                      <div>
+                        <small className="text-muted">Price for 3 nights</small>
+                        <div className="hstack align-items-baseline">
+                          <h4 className="mb-0">MMK 50,000</h4>
+                          <small className="text-muted ms-1">/ per night</small>
+                        </div>
+                      </div>
                     </div>
+                    <h5 className="small text-danger mt-3">
+                      * Only 3 rooms left on our site
+                    </h5>
                   </div>
                   <div className="col-lg-2">
+                    <Select label="Select room">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </Select>
+                  </div>
+
+                  <hr className="bg-dark-gray my-4" />
+                </div>
+                <div className="row g-3">
+                  <div className="col-lg-6">
                     <div className="vstack gap-2">
-                      <h5 className="fw-medium">Select room</h5>
-                      <Select>
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                      </Select>
+                      <h5
+                        className="fw-medium text-decoration-underline"
+                        style={{ color: "blue" }}
+                      >
+                        Standard Room
+                      </h5>
+                      <div className="hstack gap-3">
+                        <div className="hstack gap-2">
+                          <span>2 twin beds</span>
+                          <CheckCircleIcon width={25} />
+                        </div>
+                        <div className="hstack gap-2">
+                          <span>2 x adults</span>
+                          <UserGroupIcon width={25} />
+                        </div>
+                        <div className="hstack gap-2">
+                          <span>1 x child</span>
+                          <CheckCircleIcon width={25} />
+                        </div>
+                      </div>
+                      <div className="mt-3">
+                        <span
+                          className="small fw-bold"
+                          style={{ color: "blue" }}
+                        >
+                          View detail
+                        </span>
+                      </div>
                     </div>
+                  </div>
+                  <div className="col-lg-4">
+                    <div className="hstack align-items-start">
+                      <div>
+                        <small className="text-muted">Price for 3 nights</small>
+                        <div className="hstack align-items-baseline">
+                          <h4 className="mb-0">MMK 50,000</h4>
+                          <small className="text-muted ms-1">/ per night</small>
+                        </div>
+                      </div>
+                    </div>
+                    <h5 className="small text-danger mt-3">
+                      * Only 3 rooms left on our site
+                    </h5>
+                  </div>
+                  <div className="col-lg-2">
+                    <Select label="Select room">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </Select>
                   </div>
                 </div>
               </div>
@@ -502,10 +743,8 @@ function HotelDetail() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="container">
-        <div className="row g-3">
+        <div className="row g-3 mb-3">
           <div className="col-lg-12">
             <div className="card">
               <div className="card-header bg-white">
