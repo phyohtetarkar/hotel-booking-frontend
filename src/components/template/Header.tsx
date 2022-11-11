@@ -200,27 +200,6 @@ function Header({ hideAuth }: HeaderProps) {
               <li className="nav-item d-none d-lg-block">
                 <NavLink href="/hotels">Hotels</NavLink>
               </li>
-              <li className="nav-item">
-                <form className="d-flex ms-lg-3" onSubmit={handleSubmit}>
-                  <div className="input-group">
-                    <button
-                      type="submit"
-                      className="btn btn-light text-muted pe-0 rounded-start"
-                    >
-                      <MagnifyingGlassIcon width={20} />
-                    </button>
-                    <input
-                      className="form-control border-0 bg-light px-3 py-2 rounded-end"
-                      type="search"
-                      placeholder="Search hotels..."
-                      aria-label="Search"
-                      size={24}
-                      value={search ?? ""}
-                      onChange={(e) => setSearch(e.target.value)}
-                    />
-                  </div>
-                </form>
-              </li>
             </ul>
 
             <div
