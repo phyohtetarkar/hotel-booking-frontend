@@ -49,7 +49,7 @@ function MyHotels() {
                       </div>
                       <div className="col-auto">
                         <Link
-                          href="/profile/shops/create"
+                          href="/profile/hotels/create"
                           className="ms-auto btn btn-primary h-100 hstack"
                         >
                           Create new
