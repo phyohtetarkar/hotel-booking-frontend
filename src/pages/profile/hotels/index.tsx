@@ -128,7 +128,7 @@ function MyHotels() {
                           <td>
                             <div className="d-flex">
                               <Link
-                                href={"#"}
+                                href="/profile/hotels/1/edit"
                                 className="btn btn-primary"
                               >
                                 <PencilSquareIcon width={20} />
@@ -202,7 +202,7 @@ function MyHotels() {
                           <td>
                             <div className="d-flex">
                               <Link
-                                href={"#"}
+                                href="/profile/hotels/1/edit"
                                 className="btn btn-primary"
                               >
                                 <PencilSquareIcon width={20} />

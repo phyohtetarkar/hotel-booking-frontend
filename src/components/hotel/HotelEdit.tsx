@@ -13,7 +13,40 @@ const DynamicEditor = dynamic<RichTextEditorInputProps>(
   }
 );
 
+function FacilitiesRow() {
+  return (<div className="col-auto">
+  <div
+    className="border-0 bg-secondary align-items-center"
+    style={{
+      paddingTop: 6,
+      paddingBottom: 6,
+      paddingLeft: 12,
+      paddingRight: 12,
+    }}
+  >
+    <div className="hstack">
+      <WifiIcon
+        width={25}
+        color={"green"}
+        className="flex-shrink-0"
+      />
+      <span className="text-dark ms-1 small">
+        Spa and wellness centre
+      </span>
+      <Link href="#">
+      <XMarkIcon
+        className="ms-2 text-dark flex-shrink-0"
+        width={20}
+      />
+      </Link>
+    </div>
+  </div>
+</div>);
+}
+
 function HotelEdit({ create = {} }) {
+  const list = [1, 2, 3];
+
   return (
     <div className="pb-5">
       <div className="bg-primary">
@@ -117,25 +150,19 @@ function HotelEdit({ create = {} }) {
                     </div>
                     <div className="order-3 order-md-3 order-lg-3 col-lg-6">
                       <label className="form-label">Description</label>
-                      <div className="border rounded pt-1 pb-1">
                         <DynamicEditor
                           id="descriptionInput"
                           placeholder="Enter hotel description..."
                           minHeight={300}
-                          noBorder
                         />
-                      </div>
                     </div>
                     <div className="order-4 order-md-4 order-lg-4 col-lg-6">
                       <label className="form-label">Area Info</label>
-                      <div className="border rounded pt-1 pb-1">
                         <DynamicEditor
                           id="areaInfoInput"
                           placeholder="Enter hotel area info..."
                           minHeight={300}
-                          noBorder
                         />
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -197,72 +224,9 @@ function HotelEdit({ create = {} }) {
               <div className="card-body p-3">
                 <div className="vstack">
                   <div className="row g-3">
-                    <div className="col-auto">
-                      <div
-                        className="border-0 bg-secondary align-items-center p-2"
-                      >
-                        <div className="hstack">
-                          <WifiIcon
-                            width={25}
-                            color={"green"}
-                            className="flex-shrink-0"
-                          />
-                          <span className="text-dark ms-1 small">
-                            Spa and wellness centre
-                          </span>
-                          <Link href="#">
-                          <XMarkIcon
-                            className="ms-2 text-dark flex-shrink-0"
-                            width={20}
-                          />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-auto">
-                      <div
-                        className="border-0 bg-secondary align-items-center p-2"
-                      >
-                        <div className="hstack">
-                          <WifiIcon
-                            width={25}
-                            color={"green"}
-                            className="flex-shrink-0"
-                          />
-                          <span className="text-dark ms-1 small">
-                            Spa and wellness centre
-                          </span>
-                          <Link href="#">
-                          <XMarkIcon
-                            className="ms-2 text-dark flex-shrink-0"
-                            width={20}
-                          />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-auto">
-                      <div
-                        className="border-0 bg-secondary align-items-center p-2"
-                      >
-                        <div className="hstack">
-                          <WifiIcon
-                            width={25}
-                            color={"green"}
-                            className="flex-shrink-0"
-                          />
-                          <span className="text-dark ms-1 small">
-                            Spa and wellness centre
-                          </span>
-                          <Link href="#">
-                          <XMarkIcon
-                            className="ms-2 text-dark flex-shrink-0"
-                            width={20}
-                          />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+                    {list.map((i) => (
+                      <FacilitiesRow key={i}/>
+                    ))}
                   </div>
                 </div>
               </div>
