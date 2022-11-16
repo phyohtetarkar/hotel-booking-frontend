@@ -203,9 +203,9 @@ function HotelEdit({ create = {} }) {
               </div>
               <div className="card-body px-md-4">
                 <div className="d-flex flex-wrap gap-3">
-                    {list.map((i) => (
-                      <FacilitiesChip key={i} />
-                    ))}
+                  {list.map((i) => (
+                    <FacilitiesChip key={i} />
+                  ))}
                 </div>
               </div>
             </div>
@@ -216,14 +216,12 @@ function HotelEdit({ create = {} }) {
                 <h5 className="mb-0">Area information</h5>
               </div>
               <div className="card-body p-0 ">
-                <div className="col-lg-12">
-                  <DynamicEditor
-                    id="areaInfoInput"
-                    placeholder="Enter hotel area info..."
-                    minHeight={300}
-                    noBorder
-                  />
-                </div>
+                <DynamicEditor
+                  id="areaInfoInput"
+                  placeholder="Enter hotel area info..."
+                  minHeight={300}
+                  noBorder
+                />
               </div>
             </div>
           </div>

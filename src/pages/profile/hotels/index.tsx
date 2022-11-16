@@ -9,7 +9,77 @@ import AccountMenu from "../../../components/account/AccountMenu";
 import { Input, Select } from "../../../components/forms";
 import Pagination from "../../../components/Pagination";
 
+function HotelItem() {
+  return (
+    <tr style={{ height: 95 }}>
+      <td className="ps-3 ps-lg-4">
+        <div className="d-flex gap-3">
+          <div className="ratio ratio-16x9" style={{ width: 120 }}>
+            <span
+              style={{
+                boxSizing: "border-box",
+                display: "block",
+                overflow: "hidden",
+                width: "initial",
+                height: "initial",
+                background: "none",
+                opacity: 1,
+                border: 0,
+                margin: 0,
+                padding: 0,
+                position: "absolute",
+                inset: 0,
+              }}
+            >
+              <Image
+                className="card-img-top rounded"
+                src={`https://source.unsplash.com/random/200x240?random=${Math.floor(
+                  Math.random() * 100
+                )}`}
+                alt="Hotel image."
+                fill={true}
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </span>
+          </div>
+          <div className="d-flex align-items-center">
+            <Link
+              href={"/profile/hotels/1"}
+              className="text-nowrap pe-3 text-dark text-decoration-none"
+            >
+              <h6 style={{ fontSize: 18 }}>Hotel Name</h6>
+            </Link>
+          </div>
+        </div>
+      </td>
+      <td>
+        <span className="text-nowrap pe-3">7 July, 2021 1:42pm</span>
+      </td>
+      <td>
+        <div className="d-flex">
+          <div className="text-nowrap px-2 py-1 small rounded bg-warning bg-opacity-10 text-warning">
+            Pending
+          </div>
+        </div>
+      </td>
+      <td>
+        <div className="d-flex">
+          <Link href="/profile/hotels/1/edit" className="btn btn-primary">
+            <PencilSquareIcon width={20} />
+          </Link>
+          <Link href={"#"} className="btn btn-danger ms-2">
+            <TrashIcon width={20} />
+          </Link>
+        </div>
+      </td>
+    </tr>
+  );
+}
+
 function MyHotels() {
+  const list = [1, 2];
+
   return (
     <div>
       <div className="bg-primary">
@@ -68,154 +138,9 @@ function MyHotels() {
                         </tr>
                       </thead>
                       <tbody className="border-top-0">
-                        <tr style={{ height: 95 }}>
-                          <td className="ps-3 ps-lg-4">
-                            <div className="d-flex gap-3">
-                              <div
-                                className="ratio ratio-16x9"
-                                style={{ width: 120 }}
-                              >
-                                <span
-                                  style={{
-                                    boxSizing: "border-box",
-                                    display: "block",
-                                    overflow: "hidden",
-                                    width: "initial",
-                                    height: "initial",
-                                    background: "none",
-                                    opacity: 1,
-                                    border: 0,
-                                    margin: 0,
-                                    padding: 0,
-                                    position: "absolute",
-                                    inset: 0,
-                                  }}
-                                >
-                                  <Image
-                                    className="card-img-top rounded"
-                                    src={`https://source.unsplash.com/random/200x240?random=${Math.floor(
-                                      Math.random() * 100
-                                    )}`}
-                                    alt="Hotel image."
-                                    fill={true}
-                                    style={{ objectFit: "cover" }}
-                                    priority
-                                  />
-                                </span>
-                              </div>
-                              <div className="d-flex align-items-center">
-                                <Link
-                                  href={"#"}
-                                  className="text-nowrap pe-3 text-dark text-decoration-none"
-                                >
-                                  <h6 style={{ fontSize: 18 }}>Hotel Name</h6>
-                                </Link>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <span className="text-nowrap pe-3">
-                              7 July, 2021 1:42pm
-                            </span>
-                          </td>
-                          <td>
-                            <div className="d-flex">
-                              <div className="text-nowrap px-2 py-1 small rounded bg-warning bg-opacity-10 text-warning">
-                                Pending
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="d-flex">
-                              <Link
-                                href="/profile/hotels/1/edit"
-                                className="btn btn-primary"
-                              >
-                                <PencilSquareIcon width={20} />
-                              </Link>
-                              <Link
-                                href={"#"}
-                                className="btn btn-danger ms-2"
-                              >
-                                <TrashIcon width={20} />
-                              </Link>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr style={{ height: 95 }}>
-                          <td className="ps-3 ps-lg-4">
-                            <div className="d-flex gap-3">
-                              <div
-                                className="ratio ratio-16x9"
-                                style={{ width: 120 }}
-                              >
-                                <span
-                                  style={{
-                                    boxSizing: "border-box",
-                                    display: "block",
-                                    overflow: "hidden",
-                                    width: "initial",
-                                    height: "initial",
-                                    background: "none",
-                                    opacity: 1,
-                                    border: 0,
-                                    margin: 0,
-                                    padding: 0,
-                                    position: "absolute",
-                                    inset: 0,
-                                  }}
-                                >
-                                  <Image
-                                    className="card-img-top rounded"
-                                    src={`https://source.unsplash.com/random/200x240?random=${Math.floor(
-                                      Math.random() * 100
-                                    )}`}
-                                    alt="Hotel image."
-                                    fill={true}
-                                    style={{ objectFit: "cover" }}
-                                    priority
-                                  />
-                                </span>
-                              </div>
-                              <div className="d-flex align-items-center">
-                                <Link
-                                  href={"#"}
-                                  className="text-nowrap pe-3 text-dark text-decoration-none"
-                                >
-                                  <h6 style={{ fontSize: 18 }}>Hotel Name</h6>
-                                </Link>
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <span className="text-nowrap pe-3">
-                              7 July, 2021 1:42pm
-                            </span>
-                          </td>
-                          <td>
-                            <div className="d-flex">
-                              <div className="text-nowrap px-2 py-1 small rounded bg-success bg-opacity-10 text-success">
-                                Active
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <div className="d-flex">
-                              <Link
-                                href="/profile/hotels/1/edit"
-                                className="btn btn-primary"
-                              >
-                                <PencilSquareIcon width={20} />
-                              </Link>
-                              <Link
-                                href={"#"}
-                                className="btn btn-danger ms-2"
-                              >
-                                <TrashIcon width={20} />
-                              </Link>
-                            </div>
-                          </td>
-                        </tr>
+                        {list.map((i) => (
+                          <HotelItem key={i} />
+                        ))}
                       </tbody>
                     </table>
                   </div>
