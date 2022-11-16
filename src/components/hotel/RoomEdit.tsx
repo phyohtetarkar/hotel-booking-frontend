@@ -1,7 +1,7 @@
 import { PlusIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { WifiIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import { Input } from "../forms";
+import { AutocompleteSelect, Input } from "../forms";
 
 function FacilitiesRow() {
   return (
@@ -68,17 +68,6 @@ function RoomEdit({ create = {} }) {
 
                 <div className="col-lg-6">
                   <Input
-                    label="Slug *"
-                    id="slugInput"
-                    name="slug"
-                    type="text"
-                    placeholder="/slug"
-                  />
-                </div>
-              </div>
-              <div className="row g-4">
-                <div className="col-lg-6">
-                  <Input
                     label="Bed Type *"
                     id="bedInput"
                     name="bed"
@@ -86,7 +75,9 @@ function RoomEdit({ create = {} }) {
                     placeholder="Enter bed type"
                   />
                 </div>
-                <div className="col-lg-3">
+              </div>
+              <div className="row g-4">
+                <div className="col-lg-6">
                   <Input
                     label="Adult *"
                     id="adultInput"
@@ -95,7 +86,7 @@ function RoomEdit({ create = {} }) {
                     placeholder=""
                   />
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-6">
                   <Input
                     label="Child *"
                     id="childInput"
@@ -111,7 +102,7 @@ function RoomEdit({ create = {} }) {
                   <div className="form-check form-switch">
                     <input
                       id="breakfastCheck"
-                      className="form-check-input"
+                      className="form-check-input rounded-pill"
                       type="checkbox"
                     ></input>
                     <label
@@ -126,7 +117,7 @@ function RoomEdit({ create = {} }) {
                   <div className="form-check form-switch">
                     <input
                       id="freeCancellationCheck"
-                      className="form-check-input"
+                      className="form-check-input rounded-pill"
                       type="checkbox"
                     ></input>
                     <label
@@ -158,29 +149,11 @@ function RoomEdit({ create = {} }) {
                 </div>
                 <div className="col-lg-6">
                   <label className="form-label">Discount</label>
-                  <div className="input-group">
-                    <Input
-                      id="discountInput"
-                      name="discount"
-                      type="text"
-                      placeholder="Enter discount"
-                    />
-                    <div className="d-flex">
-                      <select className="form-select rounded-0 border-start-0 bg-light">
-                        <option value="fixed">.00</option>
-                        <option value="percent">%</option>
-                      </select>
-                    </div>
-                    <div className="input-group-text">
-                      <div className="form-check mb-0">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                        ></input>
-                        <label className="form-check-label">Apply</label>
-                      </div>
-                    </div>
-                  </div>
+                  <AutocompleteSelect<string, string>
+                    placeholder="Choose discount"
+                    getOptionLabel={(v) => v}
+                    getOptionValue={(v) => v}
+                  />
                 </div>
               </div>
             </div>

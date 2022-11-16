@@ -38,7 +38,7 @@ function HotelOverview() {
       <div className="container py-4">
         <div className="row">
           <div className="col-12">
-            <div className="border rounded bg-white vstack overflow-hidden">
+            <div className="border rounded bg-white vstack">
               <div
                 style={{
                   width: "100%",
@@ -54,7 +54,7 @@ function HotelOverview() {
                   priority
                 />
               </div>
-              <div className="row p-3 py-sm-4">
+              <div className="row p-3 py-sm-4 position-relative">
                 <div className="col">
                   <div className="hstack">
                     <div className="flex-shrink-0 mt-n9">
@@ -82,8 +82,12 @@ function HotelOverview() {
                   >
                     <div className="flex-grow-1 d-none d-md-block"></div>
                     <Dropdown
-                      toggle={"Hotel Action"}
-                      toggleClassName="dropdown-toggle"
+                      toggle={
+                        <button className="btn btn-outline-light text-muted dropdown-toggle">
+                          Hotel Action
+                        </button>
+                      }
+                      menuClassName="dropdown-menu-end"
                     >
                       <li role="button" className="dropdown-item">
                         Edit
@@ -112,27 +116,7 @@ function HotelOverview() {
               </div>
             </div>
           </div>
-          <div className="card-body">
-            <div className="vstack">
-              <div className="card-body">
-                <div className="vstack">
-                  {/* <div className="row g-3">
-                    {list.map((i) => {
-                      return (
-                        <div className="col-3" key={i}>
-                          <ProductManageGridItem />
-                        </div>
-                      );
-                    })}
-                  </div> */}
-
-                  {/* <div className="d-flex justify-content-end pt-3 px-3">
-                    <Pagination hasPrev={true} hasNext={true} />
-                  </div> */}
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="card-body"></div>
         </div>
       </div>
     </div>
