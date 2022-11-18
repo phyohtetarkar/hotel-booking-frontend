@@ -7,7 +7,7 @@ function FacilitiesRow() {
   return (
     <div className="hstack rounded p-2 border">
       <WifiIcon width={20} color={"green"} className="flex-shrink-0" />
-      <span className="text-dark ms-2 small">Free wifi</span>
+      <span className="text-dark ms-2 small">Free wifi Free Wifi</span>
       <div role="button" className="link-danger ms-2">
         <XCircleIcon className="flex-shrink-0" width={20} />
       </div>
@@ -83,7 +83,6 @@ function RoomEdit({ create = {} }) {
                     id="adultInput"
                     name="adult"
                     type="number"
-                    placeholder=""
                   />
                 </div>
                 <div className="col-lg-6">
@@ -92,7 +91,6 @@ function RoomEdit({ create = {} }) {
                     id="childInput"
                     name="child"
                     type="number"
-                    placeholder=""
                   />
                 </div>
               </div>
@@ -140,11 +138,11 @@ function RoomEdit({ create = {} }) {
               <div className="row g-4">
                 <div className="col-lg-6">
                   <Input
-                    label="Price *"
+                    label="Price per night *"
                     id="priceInput"
                     name="price"
                     type="text"
-                    placeholder="Enter price"
+                    placeholder="Enter price per night"
                   />
                 </div>
                 <div className="col-lg-6">
@@ -200,14 +198,11 @@ function RoomEdit({ create = {} }) {
           </div>
 
           <div className="card">
-            <div className="card-header bg-white py-3">
+            <div className="card-header bg-white p-3">
               <div className="hstack">
-                <h5 className="mb-0">Amenities/Facilities</h5>
+                <h5 className="mb-0 flex-grow-1">Amenities/Facilities</h5>
                 <div className="ms-auto">
-                  <Link
-                    href="/profile/shops/create"
-                    className="btn btn-primary"
-                  >
+                  <Link href="#" className="btn btn-primary">
                     Add new
                   </Link>
                 </div>

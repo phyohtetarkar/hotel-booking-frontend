@@ -8,16 +8,22 @@ import {
   WifiIcon,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { Calendar } from "react-calendar";
 import { formControlHeight } from "../../common/app.config";
+import { formatPrice } from "../../common/utils";
 import { Input, Select } from "../../components/forms";
 import Popover from "../../components/Popover";
 
 function HotelDetail() {
   const [checkInDate, setCheckInDate] = useState(new Date());
   const [checkOutDate, setCheckOutDate] = useState(new Date());
-
+  const [roomSelected, setRommSelected] = useState(0);
+  const pricePerNight = 30000;
+  const night = 2;
+  const priceforNights = night * pricePerNight;
+  
   return (
     <div className="mb-5">
       <div className="bg-primary">
@@ -604,10 +610,10 @@ function HotelDetail() {
                       <div className="hstack align-items-start">
                         <div>
                           <small className="text-muted">
-                            Price for 3 nights
+                            Price for {night} nights
                           </small>
                           <div className="hstack align-items-baseline">
-                            <h5 className="mb-0">MMK 50,000</h5>
+                            <h5 className="mb-0">MMK {pricePerNight}</h5>
                             <small className="text-muted ms-1">
                               / per night
                             </small>
@@ -619,10 +625,15 @@ function HotelDetail() {
                       </h5>
                     </div>
                     <div className="col-lg-2">
-                      <Select label="Select room">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
+                      <Select
+                        label="Select room"
+                        onChange={(e) => {
+                          setRommSelected(parseInt(e.target.value));
+                        }}
+                      >
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
                       </Select>
                     </div>
 
@@ -665,10 +676,10 @@ function HotelDetail() {
                       <div className="hstack align-items-start">
                         <div>
                           <small className="text-muted">
-                            Price for 3 nights
+                            Price for {night} nights
                           </small>
                           <div className="hstack align-items-baseline">
-                            <h5 className="mb-0">MMK 50,000</h5>
+                            <h5 className="mb-0">MMK {pricePerNight}</h5>
                             <small className="text-muted ms-1">
                               / per night
                             </small>
@@ -680,13 +691,17 @@ function HotelDetail() {
                       </h5>
                     </div>
                     <div className="col-lg-2">
-                      <Select label="Select room">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
+                      <Select
+                        label="Select room"
+                        onChange={(e) => {
+                          setRommSelected(parseInt(e.target.value));
+                        }}
+                      >
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
                       </Select>
                     </div>
-
                     <hr className="bg-dark-gray my-4" />
                   </div>
                   <div className="row g-3">
@@ -726,10 +741,10 @@ function HotelDetail() {
                       <div className="hstack align-items-start">
                         <div>
                           <small className="text-muted">
-                            Price for 3 nights
+                            Price for {night} nights
                           </small>
                           <div className="hstack align-items-baseline">
-                            <h5 className="mb-0">MMK 50,000</h5>
+                            <h5 className="mb-0">MMK {pricePerNight}</h5>
                             <small className="text-muted ms-1">
                               / per night
                             </small>
@@ -741,10 +756,15 @@ function HotelDetail() {
                       </h5>
                     </div>
                     <div className="col-lg-2">
-                      <Select label="Select room">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
+                      <Select
+                        label="Select room"
+                        onChange={(e) => {
+                          setRommSelected(parseInt(e.target.value));
+                        }}
+                      >
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
                       </Select>
                     </div>
                   </div>
@@ -757,7 +777,38 @@ function HotelDetail() {
               <div className="card-header bg-white">
                 <h5 className="mt-2"> Select Room</h5>
               </div>
-              <div className="card-body"></div>
+              <div className="card-body">
+                {roomSelected > 0 && (
+                  <div className="vstack gap-3">
+                    <h5
+                      className="fw-medium flex-grow-1"
+                      style={{ color: "blue" }}
+                    >
+                      Price for {night} nights
+                    </h5>
+
+                    <div className="hstack">
+                      <h5 className="text-muted flex-grow-1">
+                        {roomSelected} x Standard Room
+                      </h5>
+                      <h5 className="fw-medium">
+                        MMK {formatPrice(roomSelected * priceforNights)}
+                      </h5>
+                    </div>
+                    <small className="ms-auto mt-3 text-muted">
+                      * Includes taxes and fees
+                    </small>
+                    <div>
+                      <Link
+                        href="/reservation"
+                        className="btn btn-primary w-100"
+                      >
+                        Reserve
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

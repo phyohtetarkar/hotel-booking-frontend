@@ -38,7 +38,7 @@ function HotelOverview() {
       <div className="container py-4">
         <div className="row">
           <div className="col-12">
-            <div className="border rounded bg-white vstack">
+            <div className="border bg-white vstack">
               <div
                 style={{
                   width: "100%",
