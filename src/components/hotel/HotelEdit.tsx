@@ -1,4 +1,4 @@
-import { PhotoIcon, XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon, PhotoIcon, XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon, WifiIcon } from "@heroicons/react/24/solid";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -15,6 +15,18 @@ const DynamicEditor = dynamic<RichTextEditorInputProps>(
     ssr: false,
   }
 );
+
+function ContactChip() {
+  return (
+    <div className="hstack border p-2">
+      <PhoneIcon width={15} className="flex-shrink-0" />
+      <span className="text-dark ms-1 small">09-24442122</span>
+      <div role="button" className="link-danger ms-2">
+        <XCircleIcon className="flex-shrink-0" width={20} />
+      </div>
+    </div>
+  );
+}
 
 function FacilitiesChip() {
   return (
@@ -147,6 +159,63 @@ function HotelEdit({ create = {} }) {
           <div className="col-md-12 col-lg-12">
             <div className="card">
               <div className="card-header bg-white py-3 px-md-4">
+                <div className="hstack">
+                  <h5 className="mb-0">Contacts</h5>
+                  <div className="ms-auto">
+                    <Link
+                      href=""
+                      className="btn btn-primary"
+                    >
+                      Add new
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="card-body px-md-4">
+                <div className="d-flex flex-wrap gap-3">
+                  {list.map((i) => (
+                    <ContactChip key={i} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-12 col-lg-12">
+            <div className="card">
+              <div className="card-header bg-white py-3 px-md-4">
+                <div className="hstack">
+                  <h5 className="mb-0">Location</h5>
+                </div>
+              </div>
+              <div className="card-body px-md-4">
+                <div className="vstack">
+                  <div className="row g-3">
+                  <div className="col-lg-6">
+                      <Input
+                        label="Latitude"
+                        id="latitudeInput"
+                        name="latitude"
+                        type="text"
+                        placeholder="Enter latitude"
+                      />
+                    </div>
+                    <div className="col-lg-6">
+                      <Input
+                        label="Longitude"
+                        id="logitudeInput"
+                        name="Longitude"
+                        type="text"
+                        placeholder="Enter longitude"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-12 col-lg-12">
+            <div className="card">
+              <div className="card-header bg-white py-3 px-md-4">
                 <h5 className="mb-0">Images</h5>
               </div>
               <div className="card-body px-md-4">
@@ -176,24 +245,10 @@ function HotelEdit({ create = {} }) {
             <div className="card">
               <div className="card-header bg-white py-3 px-md-4">
                 <div className="hstack">
-                  <h5 className="mb-0">Location</h5>
-                </div>
-              </div>
-              <div className="card-body px-md-4">
-                <div className="vstack">
-                  <div className="row g-3"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-12 col-lg-12">
-            <div className="card">
-              <div className="card-header bg-white py-3 px-md-4">
-                <div className="hstack">
                   <h5 className="mb-0">Amenities/Facilities</h5>
                   <div className="ms-auto">
                     <Link
-                      href="/profile/shops/create"
+                      href=""
                       className="btn btn-primary"
                     >
                       Add new

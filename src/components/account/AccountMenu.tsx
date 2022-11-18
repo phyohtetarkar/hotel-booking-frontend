@@ -40,16 +40,16 @@ function AccountMenu({}) {
           icon: <UserIcon className="me-2" strokeWidth={2} width={iconSize} />
         })}
         {menuLink({
-          href: "/profile/orders-history",
-          title: "Booking history",
-          icon: (
-            <ClipboardIcon className="me-2" strokeWidth={2} width={iconSize} />
-          )
-        })}
-        {menuLink({
           href: "/profile/saved",
           title: "My saved",
           icon: <HeartIcon className="me-2" strokeWidth={2} width={iconSize} />
+        })}
+        {menuLink({
+          href: "/profile/booking",
+          title: "My booking",
+          icon: (
+            <ClipboardIcon className="me-2" strokeWidth={2} width={iconSize} />
+          )
         })}
         {menuLink({
           href: "/profile/hotels",
