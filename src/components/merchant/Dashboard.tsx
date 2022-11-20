@@ -1,7 +1,7 @@
-import { ClipboardIcon } from "@heroicons/react/24/outline";
 import {
+  BookmarkIcon,
+  ClipboardDocumentCheckIcon,
   CurrencyDollarIcon,
-  HomeIcon
 } from "@heroicons/react/24/solid";
 
 function Dashboard() {
@@ -26,7 +26,7 @@ function Dashboard() {
             <div className="card p-3">
               <div className="vstack gap-2">
                 <div className="hstack gap-2 align-items-start">
-                  <ClipboardIcon
+                  <ClipboardDocumentCheckIcon
                     width={iconSize}
                     className="flex-shrink-0 text-success"
                   />
@@ -38,7 +38,7 @@ function Dashboard() {
             <div className="card p-3">
               <div className="vstack gap-2">
                 <div className="hstack gap-2 align-items-start">
-                  <HomeIcon
+                  <BookmarkIcon
                     width={iconSize}
                     className="flex-shrink-0 text-primary"
                   />
