@@ -50,7 +50,7 @@ function Reservation() {
                     <span className="small flex-grow-1">
                       9 jasmin Road, New Bagan
                     </span>
-                    <div className="hstack gap-3 mt-3 flex-wrap">
+                    <div className="hstack gap-2 mt-3 flex-wrap">
                       <div className="hstack align-items-start gap-1">
                         <CheckCircleIcon
                           width={25}

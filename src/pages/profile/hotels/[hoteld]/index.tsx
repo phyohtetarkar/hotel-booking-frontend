@@ -148,7 +148,7 @@ function HotelOverview() {
                     </div>
                     <div className="ms-2 d-flex flex-column mt-n2 mt-sm-n3">
                       <h4 className="mb-0">{"Bagan View Hotel"}</h4>
-                      <div className="text-muted small mb-1 text-truncate">
+                      <div className="text-muted small mb-1">
                         {"9 jasmin Road, New Bagan"}
                       </div>
                     </div>
