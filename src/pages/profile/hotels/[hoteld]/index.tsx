@@ -1,12 +1,91 @@
+import { ChartBarIcon, HomeIcon, TagIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { ReactNode, useEffect, useState } from "react";
 import Dropdown from "../../../../components/Dropdown";
-import Pagination from "../../../../components/Pagination";
+import Dashboard from "../../../../components/merchant/Dashboard";
+import DiscountListing from "../../../../components/merchant/DiscountListing";
+import RoomListing from "../../../../components/merchant/RoomListing";
+
+type PageTab = "dashboard" | "rooms" | "discounts";
 
 function HotelOverview() {
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState<PageTab>("dashboard");
+
+  const iconSize = 20;
+
   let image = `https://source.unsplash.com/random/200x240?random=${Math.floor(
     Math.random() * 100
   )}`;
+
+  useEffect(() => {
+    if (router.isReady) {
+      const array = router.asPath.split("#");
+      const tab = array[array.length - 1];
+      console.log(tab);
+      setActiveTab(tab as PageTab);
+    }
+  }, [router]);
+
+  function menuLink({
+    href,
+    title,
+    icon,
+  }: {
+    href: string;
+    title: string;
+    icon: ReactNode;
+  }) {
+    const active = router.asPath === href;
+    return (
+      <Link
+        href={href}
+        className={`d-flex align-items-center p-2 my-list-item ${
+          active ? "active" : ""
+        }`}
+        replace
+      >
+        {icon}
+        <span>{title}</span>
+      </Link>
+    );
+  }
+  const menus = (
+    <>
+      <div className="vstack gap-1">
+        {menuLink({
+          href: "/profile/hotels/id#dashboard",
+          title: "Dashboard",
+          icon: (
+            <ChartBarIcon className="me-2" strokeWidth={2} width={iconSize} />
+          ),
+        })}
+        {menuLink({
+          href: "/profile/hotels/id#rooms",
+          title: "Rooms",
+          icon: <HomeIcon className="me-2" strokeWidth={2} width={iconSize} />,
+        })}
+        {menuLink({
+          href: "/profile/hotels/id#discounts",
+          title: "Discounts",
+          icon: <TagIcon className="me-2" strokeWidth={2} width={iconSize} />,
+        })}
+      </div>
+    </>
+  );
+
+  const activeContent = () => {
+    switch (activeTab) {
+      case "dashboard":
+        return <Dashboard />;
+      case "rooms":
+        return <RoomListing />;
+      case "discounts":
+        return <DiscountListing />;
+    }
+  };
 
   return (
     <div className="vstack">
@@ -56,7 +135,7 @@ function HotelOverview() {
               </div>
               <div className="row p-3 py-sm-4 position-relative">
                 <div className="col">
-                  <div className="hstack">
+                  <div className="hstack flex-wrap gap-2">
                     <div className="flex-shrink-0 mt-n9">
                       <Image
                         src={image}
@@ -102,21 +181,37 @@ function HotelOverview() {
             </div>
           </div>
         </div>
-        <div className="card mt-3 mb-3">
-          <div className="card-header bg-white fs-4 fw-semibold p-3">
-            <div className="hstack">
-              Rooms
-              <div className="ms-auto">
-                <Link
-                  href="/profile/hotels/id/create-room"
-                  className="btn btn-primary h-100 hstack"
-                >
-                  Create new
-                </Link>
+        <div className="row py-4 g-4">
+          <div className="col-lg-3">
+            <>
+              <div className="card d-none d-lg-block">
+                <div className="card-body">{menus}</div>
               </div>
-            </div>
+              <div className="accordion border rounded d-block d-lg-none">
+                <div className="accordion-item">
+                  <div className="accordion-header">
+                    <button
+                      className="accordion-button fw-bold collapsed"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseMenu"
+                      aria-expanded="false"
+                      aria-controls="collapseMenu"
+                    >
+                      Menu
+                    </button>
+                  </div>
+
+                  <div
+                    id="collapseMenu"
+                    className="accordion-collapse collapse border-top"
+                  >
+                    <div className="accordion-body p-3">{menus}</div>
+                  </div>
+                </div>
+              </div>
+            </>
           </div>
-          <div className="card-body"></div>
+          <div className="col-lg-9">{activeContent()}</div>
         </div>
       </div>
     </div>
