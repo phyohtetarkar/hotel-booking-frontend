@@ -1,4 +1,5 @@
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { ClockIcon, SunIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { AutocompleteSelect, Input, Textarea } from "../../../components/forms";
@@ -30,11 +31,14 @@ function Reservation() {
         <div className="row g-3">
           <div className="col-lg-8">
             <div className="card mb-3">
+              <div className="card-header bg-white mt-2">
+                <h5>Hotel Information</h5>
+              </div>
               <div className="card-body">
-                <div className="hstack gap-3 flex-wrap">
+                <div className="hstack gap-3 flex-wrap align-items-start">
                   <div
                     className="position-relative bg-light rounded flex-shrink-0"
-                    style={{ height: 120, width: 120 }}
+                    style={{ height: 90, width: 120 }}
                   >
                     <Image
                       className="p-2"
@@ -45,39 +49,50 @@ function Reservation() {
                     />
                   </div>
 
-                  <div className="vstack">
+                  <div>
                     <h4>Bagan View Hotel</h4>
-                    <span className="small flex-grow-1">
-                      9 jasmin Road, New Bagan
-                    </span>
-                    <div className="hstack gap-2 mt-3 flex-wrap">
-                      <div className="hstack align-items-start gap-1">
-                        <CheckCircleIcon
-                          width={25}
-                          className="flex-shrink-0 text-success"
-                        />
-                        <small>Free WiFi</small>
+                    <div className="hstack gap-1 text-muted align-items-start">
+                      <MapPinIcon width={20} className="flex-shrink-0" />
+                      <span className="small flex-grow-1">
+                        9 jasmin Road, New Bagan
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="row g-3 py-3">
+                  <div className="col-lg-4">
+                    <div className="card rounded border-0 bg-light">
+                      <div className="card-body">
+                        <span className="fw-normal">Check-in</span>
+                        <h6 className="mt-2">Tue, Dec 13, 2022</h6>
+                        <div className="hstack gap-2 align-items-start text-muted">
+                          <ClockIcon width={20} className="flex-shrink-0" />
+                          <h6>2:00 PM</h6>
+                        </div>
                       </div>
-                      <div className="hstack align-items-start gap-1">
-                        <CheckCircleIcon
-                          width={25}
-                          className="flex-shrink-0 text-success"
-                        />
-                        <small>Restaurant</small>
+                    </div>
+                  </div>
+                  <div className="col-lg-4">
+                    <div className="card rounded border-0 bg-light">
+                      <div className="card-body">
+                        <span className="fw-normal">Check-out</span>
+                        <h6 className="mt-2">Fri, Dec 16, 2022</h6>
+                        <div className="hstack gap-2 align-items-start text-muted">
+                          <ClockIcon width={20} className="flex-shrink-0" />
+                          <h6>12:00 PM</h6>
+                        </div>
                       </div>
-                      <div className="hstack align-items-start gap-1">
-                        <CheckCircleIcon
-                          width={25}
-                          className="flex-shrink-0 text-success"
-                        />
-                        <small>Airport shuttle</small>
-                      </div>
-                      <div className="hstack align-items-start gap-1">
-                        <CheckCircleIcon
-                          width={25}
-                          className="flex-shrink-0 text-success"
-                        />
-                        <small>Parking</small>
+                    </div>
+                  </div>
+                  <div className="col-lg-4">
+                    <div className="card rounded border-0 bg-light">
+                      <div className="card-body text-nowrap">
+                        <span className="fw-normal">Rooms & Guests</span>
+                        <h6 className="mt-2">2 Adults - Standard Room</h6>
+                        <div className="hstack gap-2 align-items-start text-muted">
+                          <SunIcon width={20} className="flex-shrink-0" />
+                          <h6>2 Nights</h6>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -170,9 +185,10 @@ function Reservation() {
                       getOptionValue={(v) => v}
                     />
                   </div>
+
                   <div className="col-lg-12">
                     <Textarea
-                      label="Special request"
+                      label="Special Request"
                       id="requestInput"
                       name="request"
                       type="text"
@@ -215,43 +231,8 @@ function Reservation() {
               </div>
             </div>
           </div>
+
           <div className="col-lg-4">
-            <div className="card mb-3">
-              <div className="card-header bg-white mt-2">
-                <h5>Your booking detail</h5>
-              </div>
-              <div className="card-body">
-                <div className="row g-3">
-                  <div className="col-lg-4 flex-grow-1">
-                    <h6 className="text-success">Check-in</h6>
-                    <h6>Tue, Dec 13, 2022</h6>
-                    <h6 className="text-muted">2:00 PM</h6>
-                  </div>
-                  <div className="col-lg-6 flex-grow-1">
-                    <h6 className="text-success">Check-out</h6>
-                    <h6>Fri, Dec 16, 2022</h6>
-                    <h6 className="text-muted">12:00 PM</h6>
-                  </div>
-                </div>
-
-                <hr className="bg-dark-gray my-4" />
-
-                <div className="row">
-                  <dt className="col-sm-5 fw-semibold">{"You selected:"}</dt>
-                  <dd className="col-sm-7">{"Standard room"}</dd>
-                  <dt className="col-sm-5 fw-semibold">
-                    {"Total length of stay:"}
-                  </dt>
-                  <dd className="col-sm-7">{"2 nights"}</dd>
-                </div>
-                <div className="d-flex justify-content-end">
-                  <Link href="/hotels/id" className="btn btn-primary">
-                    Change room
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             <div className="card">
               <div className="card-header bg-white mt-2">
                 <h5>Price summary</h5>
@@ -259,18 +240,20 @@ function Reservation() {
               <div className="card-body">
                 <dl className="row">
                   <dt className="col-sm-5 fw-semibold">{"Standard room"}</dt>
-                  <dd className="col-sm-7">{"MMK 130,000"}</dd>
+                  <dd className="col-sm-7">{"130,000 Ks"}</dd>
+                  <dt className="col-sm-5 fw-semibold">{"Discount"}</dt>
+                  <dd className="col-sm-7 text-danger">{"-13,000 Ks"}</dd>
                   <dt className="col-sm-5 fw-semibold">{"3 % TAX"}</dt>
-                  <dd className="col-sm-7">{"MMK 3,900"}</dd>
+                  <dd className="col-sm-7">{"3,510 Ks"}</dd>
                   <dt className="col-sm-5 fw-semibold">
                     {"10 % Service charge"}
                   </dt>
-                  <dd className="col-sm-7">{"MMK 13,000"}</dd>
+                  <dd className="col-sm-7">{"11,700 Ks"}</dd>
                 </dl>
                 <hr className="bg-dark-gray" />
                 <div className="row g-2">
                   <dt className="col-sm-5 fw-semibold">{"Total price"}</dt>
-                  <dd className="col-sm-7">{"MMK 146,900"}</dd>
+                  <dd className="col-sm-7">{"132,210 Ks"}</dd>
                 </div>
               </div>
               <div className="card-footer">
