@@ -295,6 +295,16 @@ svg {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.form-switch {
+  display: flex;
+  align-items: flex-end;
+}
+
+.form-switch .form-check-input {
+  padding: 0.65rem 1.2rem !important;
+  margin-right: 0.5rem;
+}
+
 /* Swiper */
 .swiper-pagination-bullet {
   background-color: #fff;

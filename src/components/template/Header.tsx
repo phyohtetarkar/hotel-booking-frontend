@@ -69,9 +69,9 @@ function AccountMenu({ onNavClick }: { onNavClick?: () => void }) {
   return (
     <AuthenticationContext.Consumer>
       {({ payload, status }) => {
-        if (status !== "success" || !payload) {
-          return null;
-        }
+        // if (status !== "success" || !payload) {
+        //   return null;
+        // }
         return (
           <ul className="navbar-nav">
             <li className="nav-item dropdown">
@@ -98,7 +98,7 @@ function AccountMenu({ onNavClick }: { onNavClick?: () => void }) {
               objectFit="cover"
             />
           </div> */}
-                <span className="">Hi, {payload.name ?? ""}</span>
+                <span className="">Hi, {payload?.name ?? "Developer"}</span>
               </a>
               <ul
                 className="dropdown-menu dropdown-menu-end"

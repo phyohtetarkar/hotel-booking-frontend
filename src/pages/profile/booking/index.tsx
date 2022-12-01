@@ -1,5 +1,8 @@
-import { BuildingOfficeIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
+import {
+  BuildingOfficeIcon,
+  EyeIcon,
+  InformationCircleIcon
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { formatTimestamp } from "../../../common/utils";
 import AccountMenu from "../../../components/account/AccountMenu";
@@ -10,32 +13,32 @@ function BookingCard() {
   return (
     <div className="card mb-3">
       <div className="card-header py-3 bg-white">
-        <div className="row align-items-center">
-          <div className="col d-flex">
-            <div className="position-relative flex-shrink-0 p-3 bg-light border-0 rounded">
-              <BuildingOfficeIcon width={20} className={"text-primary"} />
-            </div>
-            <div className="vstack gap-1 ms-3 justify-content-center">
-              <h5 className="mb-0 fw-semibold">Bagan View Hotel</h5>
-              <div className="hstack">
-                <small className="text-muted text-wrap">
-                  Booking ID: 20001
-                </small>
-                <text className="text-dark-gray px-2">&#x2022;</text>
-                <div className="text-warning">
-                  <small className="fw-semibold">PENDING</small>
-                </div>
+        <div className="hstack align-items-start flex-wrap gap-3">
+          <div
+            className="flex-shrink-0 bg-light rounded hstack d-none d-md-flex"
+            style={{ width: 60, height: 60 }}
+          >
+            <BuildingOfficeIcon width={32} className="mx-auto" />
+          </div>
+
+          <div className="vstack gap-1 justify-content-center">
+            <h5 className="mb-0 fw-semibold">Bagan View Hotel</h5>
+            <div className="hstack">
+              <small className="text-muted text-nowrap">
+                Booking ID: 20001
+              </small>
+              <text className="text-dark-gray px-2">&#x2022;</text>
+              <div className="text-warning">
+                <small className="fw-semibold">PENDING</small>
               </div>
             </div>
           </div>
-          <div className="col-auto">
-            <Link
-              className="btn btn-sm btn-outline-primary"
-              href={"/profile/booking/1"}
-            >
-              View detail
-            </Link>
-          </div>
+          <Link
+            className="btn btn-sm btn-outline-primary"
+            href={"/profile/booking/1"}
+          >
+            <span className="">Detail</span>
+          </Link>
         </div>
       </div>
       <div className="card-body">

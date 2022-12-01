@@ -24,7 +24,6 @@ function HotelOverview() {
     if (router.isReady) {
       const array = router.asPath.split("#");
       const tab = array[array.length - 1];
-      console.log(tab);
       setActiveTab(tab as PageTab);
     }
   }, [router]);
@@ -32,7 +31,7 @@ function HotelOverview() {
   function menuLink({
     href,
     title,
-    icon,
+    icon
   }: {
     href: string;
     title: string;
@@ -60,17 +59,17 @@ function HotelOverview() {
           title: "Dashboard",
           icon: (
             <ChartBarIcon className="me-2" strokeWidth={2} width={iconSize} />
-          ),
+          )
         })}
         {menuLink({
           href: "/profile/hotels/id#rooms",
           title: "Rooms",
-          icon: <HomeIcon className="me-2" strokeWidth={2} width={iconSize} />,
+          icon: <HomeIcon className="me-2" strokeWidth={2} width={iconSize} />
         })}
         {menuLink({
           href: "/profile/hotels/id#discounts",
           title: "Discounts",
-          icon: <TagIcon className="me-2" strokeWidth={2} width={iconSize} />,
+          icon: <TagIcon className="me-2" strokeWidth={2} width={iconSize} />
         })}
       </div>
     </>
@@ -121,7 +120,7 @@ function HotelOverview() {
               <div
                 style={{
                   width: "100%",
-                  height: 200,
+                  height: 200
                 }}
                 className="position-relative"
               >

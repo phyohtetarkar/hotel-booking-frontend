@@ -5,7 +5,7 @@ import Link from "next/link";
 function RoomManageGridItem() {
   return (
     <div className="card h-100">
-      <Link href="\hotels\1" className="text-decoration-none">
+      <Link href="/hotels/1" className="text-decoration-none">
         <div
           className="position-relative"
           onContextMenu={(e) => e.preventDefault()}
@@ -25,7 +25,7 @@ function RoomManageGridItem() {
       <div className="card-body">
         <div className="vstack gap-2">
           <Link
-            href="\hotels\1"
+            href="/hotels/1"
             className="text-muted text-decoration-none text-truncate"
             style={{ fontSize: 18 }}
           >
