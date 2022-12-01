@@ -1,5 +1,4 @@
-import { BuildingOfficeIcon } from "@heroicons/react/24/outline";
-import { InboxIcon, MoonIcon, UserGroupIcon } from "@heroicons/react/24/solid";
+import { BuildingOfficeIcon, InboxIcon, MoonIcon, UserGroupIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { formatTimestamp } from "../../../../common/utils";
@@ -8,29 +7,23 @@ function BookingCard() {
   return (
     <div className="card">
       <div className="card-body p-3">
-        <div className="hstack align-items-start mb-2">
-          <div className="position-relative flex-shrink-0 p-3 bg-primary border-0 rounded">
-            <BuildingOfficeIcon width={20} className={"text-light"} />
+        <div className="row align-items-start mb-2">
+        <div className="col d-flex">
+          <div className="position-relative flex-shrink-0 p-3 bg-light border-0 rounded">
+            <BuildingOfficeIcon width={20} className={"text-primary"} />
           </div>
-          <div className="ms-2">
-            <h6 className="flex-grow-1 fw-bold pe-2 mb-0">Deluxe Room</h6>
-            <text className="fw-medium">
+            <div className="vstack ms-3 justify-content-center">
+            <h6 className="fw-bold pe-2 mb-0">Deluxe Room</h6>
+              <text className="fw-medium">
               200,000&nbsp;Ks{" "}
-              <small className="fw-light text-muted">/per person</small>
+              <small className="fw-light text-muted">/per night</small>
             </text>
+            </div>
           </div>
         </div>
         <hr className="dark-gray" />
         <div className="row g-3">
-          <div className="col-sm-6 col-md-4">
-            <div className="vstack">
-              <span className="text-muted fw-light">Check-in</span>
-              <small className="mb-0 fw-medium">
-                {formatTimestamp(Date.now(), true)}
-              </small>
-            </div>
-          </div>{" "}
-          <div className="col-sm-6 col-md-4">
+          {/* <div className="col-sm-6 col-md-4">
             <div className="vstack">
               <span className="text-muted fw-light">Check-out</span>
               <small className="mb-0 fw-medium">
@@ -45,27 +38,11 @@ function BookingCard() {
                 200,000&nbsp;Ks
               </small>
             </div>
-          </div>
+          </div> */}
         </div>
-        {/* <div className="hstack p-3 bg-light bg-opacity-50  overflow-hidden">
-          <div className="vstack">
-            <text className="text-muted fw-light">Subtotal</text>
-            <small className="fw-medium">200,000&nbsp;Ks</small>
-          </div>
-          <div className="vstack">
-            <text className="text-muted fw-light">Discounts</text>
-            <small className="text-danger fw-medium">-0&nbsp;Ks</small>
-          </div>
-          <div className="vstack">
-            <text className="text-muted fw-light">Total Price</text>
-            <small className="text-success fw-medium text-truncate">
-              200,000&nbsp;Ks
-            </small>
-          </div>
-        </div> */}
       </div>
       <div className="card-footer bg-white">
-        <div className="hstack g-2 me-2 justify-content-between overflow-hidden py-1">
+        <div className="hstack g-2 me-2 justify-content-around overflow-hidden py-1">
           <div className="hstack gap-2">
             <div className="bg-primary-dark rounded p-2 bg-opacity-25">
               <UserGroupIcon width={16} className="text-primary" />
@@ -79,13 +56,6 @@ function BookingCard() {
             </div>
             <small className="fw-medium">1</small>
             <text className="text-muted fw-light">Bed</text>
-          </div>
-          <div className="hstack gap-2">
-            <div className="bg-primary-dark rounded p-2 bg-opacity-25">
-              <MoonIcon width={16} className="text-primary" />
-            </div>
-            <small className="fw-medium">5</small>
-            <text className="text-muted fw-light">Day</text>
           </div>
         </div>
       </div>
@@ -166,12 +136,12 @@ function BookingDetail() {
                       >
                         Bagan View Hotel
                       </Link>
-                      <small className="text-muted text-wrap">#ID 20001</small>
+                      <small className="text-muted text-wrap">Booking ID: 20001</small>
                     </div>
                   </div>
                   <div className="col-auto">
                     <Link
-                      className="btn btn-sm btn-outline-danger align-self-center"
+                      className="btn btn-sm btn-outline-danger"
                       href={"#"}
                     >
                       Cancel booking
@@ -184,30 +154,34 @@ function BookingDetail() {
                   <div className="col-md-5 small">
                     <h6 className="fw-bold">Customer info</h6>
                     <div>
-                      Name:<text className="text-muted ms-2">Mobile Com</text>
+                      Name:<text className="text-muted ms-2">Aung Ko Oo</text>
                     </div>
                     <div>
                       Phone:
                       <text className="text-muted ms-2">+95911223344</text>
                     </div>
-                    <div>
-                      Address:
-                      <text className="text-muted ms-2">
-                        No. 26, Pyay Street, Hlaing Township, Yangon, Myanmar
-                      </text>
-                    </div>
                   </div>
                   <div className="col-md-4 small">
                     <h6 className="fw-bold">Additional info</h6>
                     <div>
-                      Floor preference:
-                      <text className="text-muted ms-2">4th floor</text>
-                    </div>
-                    <div>
                       Check in:
                       <text className="text-muted ms-2">
-                        {formatTimestamp(Date.now(), true)}
+                        {formatTimestamp(Date.now())}
                       </text>
+                    </div>
+                    <div>
+                      Check out:
+                      <text className="text-muted ms-2">
+                        {formatTimestamp(Date.now())}
+                      </text>
+                    </div>
+                    <div>
+                      Stay Period:
+                      <text className="text-muted ms-2">2 Night</text>
+                    </div>
+                    <div>
+                      Floor preference:
+                      <text className="text-muted ms-2">4th floor</text>
                     </div>
                     <div>
                       Special request:
@@ -229,9 +203,10 @@ function BookingDetail() {
                     </div>
                   ))}
                 </div>
+                <hr className="dark-gray"/>
                 <div className="row">
                   <div className="ms-auto col-xl-4 col-lg-5 col-sm-7">
-                    <table className="table border">
+                    <table className="table">
                       <tbody>
                         <tr className="small">
                           <td className="fw-bold">Subtotal</td>

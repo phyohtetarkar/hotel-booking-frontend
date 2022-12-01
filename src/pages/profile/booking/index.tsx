@@ -1,3 +1,5 @@
+import { BuildingOfficeIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 import Link from "next/link";
 import { formatTimestamp } from "../../../common/utils";
 import AccountMenu from "../../../components/account/AccountMenu";
@@ -8,9 +10,23 @@ function BookingCard() {
   return (
     <div className="card mb-3">
       <div className="card-header py-3 bg-white">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col d-flex">
-            <span className="fw-semibold h5 my-auto">Booking ID: 20001</span>
+            <div className="position-relative flex-shrink-0 p-3 bg-light border-0 rounded">
+              <BuildingOfficeIcon width={20} className={"text-primary"} />
+            </div>
+            <div className="vstack gap-1 ms-3 justify-content-center">
+              <h5 className="mb-0 fw-semibold">Bagan View Hotel</h5>
+              <div className="hstack">
+                <small className="text-muted text-wrap">
+                  Booking ID: 20001
+                </small>
+                <text className="text-dark-gray px-2">&#x2022;</text>
+                <div className="text-warning">
+                  <small className="fw-semibold">PENDING</small>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="col-auto">
             <Link
@@ -23,7 +39,29 @@ function BookingCard() {
         </div>
       </div>
       <div className="card-body">
-        <div className="row gx-2 gy-3">
+        <div className="row g-3 ">
+          <div className="col-sm-6 col-md-4">
+            <div className="vstack">
+              <span className="text-muted fw-light">Check-in</span>
+              <h6 className="mb-0 fw-medium">{formatTimestamp(Date.now())}</h6>
+            </div>
+          </div>
+
+          <div className="col-sm-6 col-md-4">
+            <div className="vstack">
+              <span className="text-muted fw-light">Check-out</span>
+              <h6 className="mb-0 fw-medium">{formatTimestamp(Date.now())}</h6>
+            </div>
+          </div>
+
+          <div className="col-md-4">
+            <div className="vstack">
+              <span className="text-muted fw-light">Booked by</span>
+              <h6 className="mb-0 fw-medium">Aung Ko Oo</h6>
+            </div>
+          </div>
+        </div>
+        {/* <div className="row gx-2 gy-3">
           <div className="col-md-5 small">
             <h6 className="fw-bold">Customer info</h6>
             <div>
@@ -57,7 +95,7 @@ function BookingCard() {
               <small className="fw-semibold">Pending</small>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="card-footer small border-0 py-3 text-muted">
         {formatTimestamp(Date.now(), true)}
