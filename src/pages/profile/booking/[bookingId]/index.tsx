@@ -1,4 +1,5 @@
-import { BuildingOfficeIcon, InboxIcon, MoonIcon, UserGroupIcon } from "@heroicons/react/24/solid";
+import { BuildingOfficeIcon } from "@heroicons/react/24/outline";
+import { InboxIcon, MoonIcon, UserGroupIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { formatTimestamp } from "../../../../common/utils";
@@ -7,12 +8,11 @@ function BookingCard() {
   return (
     <div className="card">
       <div className="card-body p-3">
-        <div className="row align-items-start mb-2">
-        <div className="col d-flex">
-          <div className="position-relative flex-shrink-0 p-3 bg-light border-0 rounded">
-            <BuildingOfficeIcon width={20} className={"text-primary"} />
+        <div className="hstack align-items-start flex-wrap gap-3 mb-3">
+          <div className="flex-shrink-0 bg-light hstack border-0 rounded" style={{width: 50, height: 50}}>
+            <BuildingOfficeIcon width={25} className="mx-auto" />
           </div>
-            <div className="vstack ms-3 justify-content-center">
+            <div className="vstack gap-1 justify-content-center">
             <h6 className="fw-bold pe-2 mb-0">Deluxe Room</h6>
               <text className="fw-medium">
               200,000&nbsp;Ks{" "}
@@ -20,8 +20,7 @@ function BookingCard() {
             </text>
             </div>
           </div>
-        </div>
-        <hr className="dark-gray" />
+        {/* <hr className="dark-gray" /> */}
         <div className="row g-3">
           {/* <div className="col-sm-6 col-md-4">
             <div className="vstack">
@@ -176,7 +175,7 @@ function BookingDetail() {
                       </text>
                     </div>
                     <div>
-                      Stay Period:
+                      Stay period:
                       <text className="text-muted ms-2">2 Night</text>
                     </div>
                     <div>

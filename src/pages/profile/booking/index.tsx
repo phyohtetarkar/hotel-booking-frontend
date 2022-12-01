@@ -43,62 +43,27 @@ function BookingCard() {
       </div>
       <div className="card-body">
         <div className="row g-3 ">
-          <div className="col-sm-6 col-md-4">
+          <div className="col-sm-4 col-md-4">
             <div className="vstack">
               <span className="text-muted fw-light">Check-in</span>
               <h6 className="mb-0 fw-medium">{formatTimestamp(Date.now())}</h6>
             </div>
           </div>
 
-          <div className="col-sm-6 col-md-4">
+          <div className="col-sm-4 col-md-4">
             <div className="vstack">
               <span className="text-muted fw-light">Check-out</span>
               <h6 className="mb-0 fw-medium">{formatTimestamp(Date.now())}</h6>
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-sm-4 col-md-4">
             <div className="vstack">
               <span className="text-muted fw-light">Booked by</span>
               <h6 className="mb-0 fw-medium">Aung Ko Oo</h6>
             </div>
           </div>
         </div>
-        {/* <div className="row gx-2 gy-3">
-          <div className="col-md-5 small">
-            <h6 className="fw-bold">Customer info</h6>
-            <div>
-              Name:<text className="text-muted ms-2">Mobile Com</text>
-            </div>
-            <div>
-              Phone:<text className="text-muted ms-2">+95911223344</text>
-            </div>
-            <div>
-              Address:
-              <text className="text-muted ms-2">
-                No. 26, Pyay Street, Hlaing Township, Yangon, Myanmar
-              </text>
-            </div>
-          </div>
-          <div className="col-md-4 small">
-            <h6 className="fw-bold">Payment info</h6>
-            <div>
-              Subtotal:<text className="text-muted ms-2">30,000ks</text>
-            </div>
-            <div>
-              Discounts:<text className="text-danger ms-2">-0ks</text>
-            </div>
-            <div>
-              Total Price:<text className="text-success ms-2">33,000ks</text>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <h6 className="fw-bold">Status</h6>
-            <div className="text-warning">
-              <small className="fw-semibold">Pending</small>
-            </div>
-          </div>
-        </div> */}
       </div>
       <div className="card-footer small border-0 py-3 text-muted">
         {formatTimestamp(Date.now(), true)}
@@ -127,7 +92,7 @@ function MyBooking() {
           </div>
           <div className="col-lg-8 col-xl-9">
             <div className="card mb-3 p-3">
-              <div className="row">
+              <div className="row g-3">
                 <div className="col">
                   <Input
                     id="searchinput"
@@ -157,8 +122,8 @@ function MyBooking() {
             {list.map((i) => (
               <BookingCard key={i} />
             ))}
-            <div className="d-flex justify-content-end pt-3">
-              <Pagination hasPrev={true} hasNext={true} />
+            <div className="d-flex justify-content-end">
+              <Pagination/>
             </div>
           </div>
         </div>
