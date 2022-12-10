@@ -27,7 +27,7 @@ function BookingCard() {
               <small className="text-muted text-nowrap">
                 Booking ID: 20001
               </small>
-              <text className="text-dark-gray px-2">&#x2022;</text>
+              <span className="text-dark-gray px-2">&#x2022;</span>
               <div className="text-warning">
                 <small className="fw-semibold">PENDING</small>
               </div>
@@ -101,7 +101,7 @@ function MyBooking() {
                     placeholder="Search your booking"
                   />
                 </div>
-                <div className="col-auto">
+                <div className="col-auto d-none d-sm-block">
                   <Select>
                     <option value="">All Status</option>
                     <option value="">Pending</option>
@@ -109,7 +109,7 @@ function MyBooking() {
                     <option value="">Deleted</option>
                   </Select>
                 </div>
-                <div className="col-auto">
+                <div className="col-auto d-none d-sm-block">
                   <Link
                     href="#"
                     className="ms-auto btn btn-primary h-100 hstack"

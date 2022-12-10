@@ -88,7 +88,10 @@ function ProfileSetting() {
                           alt="User Photo"
                           className="rounded-circle"
                           fill={true}
+                          sizes="(max-width: 128px),
+                          (max-height: 128px)"
                           style={{ objectFit: "cover" }}
+                          priority
                         />
                         <div className="ms-auto position-absolute bottom-0 py-1 btn btn-dark opacity-75 w-100 text-light text-center">
                           Edit

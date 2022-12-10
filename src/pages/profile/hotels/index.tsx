@@ -10,6 +10,7 @@ import { Input, Select } from "../../../components/forms";
 import Pagination from "../../../components/Pagination";
 
 function HotelItem() {
+  
   return (
     <tr style={{ height: 95 }}>
       <td className="ps-3 ps-lg-4">
@@ -33,9 +34,7 @@ function HotelItem() {
             >
               <Image
                 className="card-img-top rounded"
-                src={`https://source.unsplash.com/random/200x240?random=${Math.floor(
-                  Math.random() * 100
-                )}`}
+                src={"/images/bagan.jpeg"}
                 alt="Hotel image."
                 fill={true}
                 style={{ objectFit: "cover" }}

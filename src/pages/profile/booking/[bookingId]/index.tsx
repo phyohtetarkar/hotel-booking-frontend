@@ -14,10 +14,10 @@ function BookingCard() {
           </div>
             <div className="vstack gap-1 justify-content-center">
             <h6 className="fw-bold pe-2 mb-0">Deluxe Room</h6>
-              <text className="fw-medium">
+              <span className="fw-medium">
               200,000&nbsp;Ks{" "}
               <small className="fw-light text-muted">/per night</small>
-            </text>
+            </span>
             </div>
           </div>
         {/* <hr className="dark-gray" /> */}
@@ -47,14 +47,14 @@ function BookingCard() {
               <UserGroupIcon width={16} className="text-primary" />
             </div>
             <small className="fw-medium">2</small>
-            <text className="text-muted fw-light">Guest</text>
+            <span className="text-muted fw-light">Guest</span>
           </div>
           <div className="hstack gap-2">
             <div className="bg-primary-dark rounded p-2 bg-opacity-25">
               <InboxIcon width={16} className="text-primary" />
             </div>
             <small className="fw-medium">1</small>
-            <text className="text-muted fw-light">Bed</text>
+            <span className="text-muted fw-light">Bed</span>
           </div>
         </div>
       </div>
@@ -153,38 +153,38 @@ function BookingDetail() {
                   <div className="col-md-5 small">
                     <h6 className="fw-bold">Customer info</h6>
                     <div>
-                      Name:<text className="text-muted ms-2">Aung Ko Oo</text>
+                      Name:<span className="text-muted ms-2">Aung Ko Oo</span>
                     </div>
                     <div>
                       Phone:
-                      <text className="text-muted ms-2">+95911223344</text>
+                      <span className="text-muted ms-2">+95911223344</span>
                     </div>
                   </div>
                   <div className="col-md-4 small">
                     <h6 className="fw-bold">Additional info</h6>
                     <div>
                       Check in:
-                      <text className="text-muted ms-2">
+                      <span className="text-muted ms-2">
                         {formatTimestamp(Date.now())}
-                      </text>
+                      </span>
                     </div>
                     <div>
                       Check out:
-                      <text className="text-muted ms-2">
+                      <span className="text-muted ms-2">
                         {formatTimestamp(Date.now())}
-                      </text>
+                      </span>
                     </div>
                     <div>
                       Stay period:
-                      <text className="text-muted ms-2">2 Night</text>
+                      <span className="text-muted ms-2">2 Night</span>
                     </div>
                     <div>
                       Floor preference:
-                      <text className="text-muted ms-2">4th floor</text>
+                      <span className="text-muted ms-2">4th floor</span>
                     </div>
                     <div>
                       Special request:
-                      <text className="text-muted ms-2">Something else...</text>
+                      <span className="text-muted ms-2">Something else...</span>
                     </div>
                   </div>
                   <div className="col-md-3">
