@@ -10,7 +10,7 @@ import { Input, Select } from "../../../components/forms";
 import Pagination from "../../../components/Pagination";
 
 function HotelItem() {
-  
+
   return (
     <tr style={{ height: 95 }}>
       <td className="ps-3 ps-lg-4">
@@ -108,7 +108,7 @@ function MyHotels() {
                           placeholder="Search your hotels"
                         />
                       </div>
-                      <div className="col-auto">
+                      <div className="col-auto d-none d-sm-block">
                         <Select>
                           <option value="">All Status</option>
                           <option value="">Pending</option>
@@ -116,7 +116,7 @@ function MyHotels() {
                           <option value="">Deleted</option>
                         </Select>
                       </div>
-                      <div className="col-auto">
+                      <div className="col-auto d-none d-sm-block">
                         <Link
                           href="/profile/hotels/create"
                           className="ms-auto btn btn-primary h-100 hstack"
