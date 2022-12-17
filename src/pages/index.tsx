@@ -65,7 +65,7 @@ export default function Home() {
                           }}
                           value={checkInDate}
                           locale="en-US"
-                          className={"shadow-lg mt-1 border z"}
+                          className={"shadow-lg mt-1 border"}
                           tileClassName={({ activeStartDate, date, view }) => {
                             const activeClass = "bg-primary text-light";
                             if (

@@ -323,3 +323,30 @@ svg {
 .mce-edit-focus {
   outline: none;
 }
+
+/* React Calendar */
+
+/* .react-calendar__tile--now {
+  background: var(--bs-primary);
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: var(--bs-primary);
+} */
+
+.react-calendar__tile--hasActive {
+  background: var(--bs-primary);
+  color: white;
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: var(--bs-primary);
+}
+.react-calendar__tile--active {
+  background: var(--bs-primary);
+  color: white;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: var(--bs-primary);
+}

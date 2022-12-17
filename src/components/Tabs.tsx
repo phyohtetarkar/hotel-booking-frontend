@@ -22,7 +22,7 @@ function Tabs({ defaultTabKey, children }: TabsProps) {
 
   return (
     <>
-      <ul className="nav nav-pills border-bottom">
+      <ul className="nav nav-pills border-bottom flex-nowrap overflow-auto">
         {children.map((c) => {
           const { tabKey, title, disabled, tabClassName } = c.props;
           return (

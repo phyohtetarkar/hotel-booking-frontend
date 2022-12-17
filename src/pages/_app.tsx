@@ -1,6 +1,6 @@
 import "../../styles/bootstrap-custom.css";
-import "../../styles/globals.css";
 import "react-calendar/dist/Calendar.css";
+import "../../styles/globals.css";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";

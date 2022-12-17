@@ -58,7 +58,7 @@ function Popover({
   };
 
   return (
-    <>
+    <div className="position-relative">
       <div role="button" ref={referenceElement}>
         {renderReferenceElement(() => setOpen(!open))}
       </div>
@@ -71,7 +71,7 @@ function Popover({
         {open && renderPopperElement(() => setOpen(false))}
         <div ref={setArrowElement} style={styles.arrow} />
       </div>
-    </>
+    </div>
   );
 }
 
