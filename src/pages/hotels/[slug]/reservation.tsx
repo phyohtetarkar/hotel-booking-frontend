@@ -191,7 +191,6 @@ function Reservation() {
                       label="Special Request"
                       id="requestInput"
                       name="request"
-                      type="text"
                       placeholder="Please write your request"
                     />
                   </div>

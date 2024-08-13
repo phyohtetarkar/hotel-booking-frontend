@@ -7,7 +7,7 @@ function Filter() {
   const [maxPrice, setMaxPrice] = useState(300000);
 
   return (
-    <div className="rounded shadow-sm bg-white">
+    <div className="bg-white border">
       <Accordion
         open={true}
         header={(open) => {

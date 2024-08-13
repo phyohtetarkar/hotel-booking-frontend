@@ -1,13 +1,12 @@
 import {
-  PencilIcon,
   PencilSquareIcon,
-  TrashIcon,
+  TrashIcon
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import Pagination from "../../../components/Pagination";
 import AccountMenu from "../../../components/account/AccountMenu";
 import { Input, Select } from "../../../components/forms";
-import Pagination from "../../../components/Pagination";
 
 function HotelItem() {
 
@@ -45,7 +44,7 @@ function HotelItem() {
           <div className="d-flex align-items-center">
             <Link
               href={"/profile/hotels/1"}
-              className="text-nowrap pe-3 text-dark text-decoration-none"
+              className="text-nowrap pe-3 text-dark"
             >
               <h6 style={{ fontSize: 18 }}>Hotel Name</h6>
             </Link>
