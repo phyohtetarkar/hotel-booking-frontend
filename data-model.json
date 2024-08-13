@@ -1,0 +1,19 @@
+{
+    "user": {
+        "id": "string",
+        "name": "string",
+        "phone": "string"
+    },
+    "city": {
+
+    },
+    "hotel": {
+
+    },
+    "room": {
+
+    },
+    "booking": {
+
+    }
+}

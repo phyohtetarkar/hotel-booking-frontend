@@ -1,0 +1,41 @@
+{
+  "name": "hotel-booking-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "gh-pages -d out",
+    "sass": "sass styles/scss/bootstrap-custom.scss:styles/bootstrap-custom.css"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.12",
+    "@hookform/resolvers": "^3.9.0",
+    "@popperjs/core": "^2.11.6",
+    "@tinymce/tinymce-react": "^4.2.0",
+    "bootstrap": "^5.3.3",
+    "dayjs": "^1.11.6",
+    "next": "^14.2.5",
+    "nextjs-progressbar": "^0.0.16",
+    "react": "^18.3.1",
+    "react-calendar": "^3.9.0",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.2",
+    "react-popper": "^2.3.0",
+    "react-select": "^5.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.5",
+    "@types/node": "18.11.5",
+    "@types/react": "18.0.23",
+    "@types/react-calendar": "^3.5.3",
+    "@types/react-dom": "18.0.7",
+    "eslint": "8.26.0",
+    "eslint-config-next": "^14.2.5",
+    "gh-pages": "^6.1.1",
+    "typescript": "^5.5.4"
+  }
+}
