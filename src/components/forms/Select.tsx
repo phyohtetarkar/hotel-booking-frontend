@@ -1,8 +1,11 @@
 import { ReactNode } from "react";
 import { formControlHeight } from "../../common/app.config";
-import { InputProps } from "./Input";
 
-interface SelectInputProps extends InputProps<HTMLSelectElement> {
+interface SelectInputProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  label?: ReactNode;
+  error?: string;
+  wrapperClass?: string;
+  height?: number;
   children: ReactNode;
 }
 

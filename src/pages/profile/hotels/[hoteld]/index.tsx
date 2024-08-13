@@ -16,9 +16,7 @@ function HotelOverview() {
 
   const iconSize = 20;
 
-  let image = `https://source.unsplash.com/random/200x240?random=${Math.floor(
-    Math.random() * 100
-  )}`;
+  let image = `/images/bagan.jpeg`;
 
   useEffect(() => {
     if (router.isReady) {
@@ -141,7 +139,7 @@ function HotelOverview() {
                         width={100}
                         height={100}
                         alt=""
-                        className="border rounded border-white border-4"
+                        className="border border-white border-4"
                         style={{ objectFit: "cover" }}
                       />
                     </div>

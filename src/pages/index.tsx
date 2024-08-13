@@ -1,7 +1,7 @@
 import {
   CalendarDaysIcon,
   MinusIcon,
-  PlusIcon
+  PlusIcon,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { formControlHeight } from "../common/app.config";
@@ -21,13 +21,18 @@ export default function Home() {
           src={`/images/bagan.jpeg`}
           alt=""
           fill
-          className="rounded-3"
+          sizes="100vw"
           style={{ objectFit: "cover" }}
           priority
         />
-        <div className="bg-dark opacity-25 top-0 start-0 end-0 bottom-0 position-absolute rounded-3"></div>
+        <div className="bg-dark opacity-25 top-0 start-0 end-0 bottom-0 position-absolute"></div>
         <div>
-          <div className="card border-0 shadow-sm">
+          <div
+            className="card border-0 shadow-sm"
+            style={{
+              marginTop: "10rem",
+            }}
+          >
             <div className="card-body">
               <form className="row align-items-end g-3">
                 <div className="col-12 col-lg">
@@ -45,7 +50,7 @@ export default function Home() {
                         <div className="input-group">
                           <Input
                             placeholder="Check in date"
-                            readonly
+                            readOnly
                             onClick={handleClick}
                             value={checkInDate.toDateString()}
                             onChange={() => {}}
@@ -102,7 +107,7 @@ export default function Home() {
                       placeholder="Check out date"
                       value={checkOutDate.toDateString()}
                       onChange={() => {}}
-                      readonly
+                      readOnly
                     />
                     <span className="input-group-text">
                       <CalendarDaysIcon width={20} />
@@ -121,7 +126,7 @@ export default function Home() {
                         <Input
                           label="Room &amp; guests"
                           value="2 adults - 0 children - 1 room"
-                          readonly
+                          readOnly
                           onClick={() => handleClick()}
                         />
                       );
@@ -145,7 +150,7 @@ export default function Home() {
                                   <input
                                     type="text"
                                     className="form-control text-center border-primary"
-                                    value={1}
+                                    defaultValue={1}
                                     readOnly
                                     style={{ maxWidth: 46 }}
                                   ></input>
@@ -173,7 +178,7 @@ export default function Home() {
                                   <input
                                     type="text"
                                     className="form-control text-center border-primary"
-                                    value={1}
+                                    defaultValue={1}
                                     readOnly
                                     style={{ maxWidth: 46 }}
                                   ></input>
@@ -201,7 +206,7 @@ export default function Home() {
                                   <input
                                     type="text"
                                     className="form-control text-center border-primary"
-                                    value={1}
+                                    defaultValue={1}
                                     readOnly
                                     style={{ maxWidth: 46 }}
                                   ></input>

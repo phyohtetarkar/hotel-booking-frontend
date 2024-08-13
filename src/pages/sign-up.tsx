@@ -1,11 +1,11 @@
-import { useFormik } from "formik";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { Input, PasswordInput } from "../components/forms";
 
-interface FormValues {
+interface SignUpForm {
   fullName?: string;
   phone?: string;
   password?: string;
@@ -13,56 +13,7 @@ interface FormValues {
 }
 
 function Register() {
-  const mountedRef = useRef(true);
   const router = useRouter();
-
-  const {
-    values,
-    errors,
-    handleChange,
-    handleSubmit,
-    isSubmitting,
-    setSubmitting
-  } = useFormik<FormValues>({
-    initialValues: {
-      fullName: "",
-      phone: "",
-      password: "",
-      confirmPassword: ""
-    },
-    validate: (values) => {
-      const errors: FormValues = {};
-      const phoneRegex = "^(09)\\d{7,12}$";
-
-      if (!values.fullName || values.fullName.trim().length === 0) {
-        errors.fullName = "Please enter your fullname.";
-      }
-
-      if (!values.phone || !values.phone.match(phoneRegex)) {
-        errors.phone = "Please enter valid phone number.";
-      }
-
-      if (!values.password || values.password.trim().length < 8) {
-        errors.password = "Password must be at least 8 characters.";
-      } else if (values.password !== values.confirmPassword) {
-        errors.confirmPassword = "Password does not match.";
-      }
-
-      return errors;
-    },
-    validateOnBlur: false,
-    validateOnChange: false,
-    onSubmit: (values) => {
-      processSignUp(values);
-    }
-  });
-
-  useEffect(() => {
-    mountedRef.current = true;
-    return () => {
-      mountedRef.current = false;
-    };
-  }, []);
 
   useEffect(() => {
     if (!router.isReady) {
@@ -71,26 +22,23 @@ function Register() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router]);
 
-  const processSignUp = async (values: FormValues) => {
+  const {
+    control,
+    formState: { isSubmitting },
+  } = useForm();
+
+  const processSignUp = async (values: SignUpForm) => {
     try {
       const phone = `+95${values.phone!.substring(1)}`;
-      // const { user } = await signUp({
-      //   name: values.fullName!,
-      //   phone: phone,
-      //   password: values.password!
-      // });
-      mountedRef.current && router.push("/");
     } catch (error) {
       console.log("error signing up:", error);
-    } finally {
-      mountedRef.current && setSubmitting(false);
     }
   };
 
   return (
     <div className="container py-3">
       <div className="row my-4">
-        <div className="col-md-6 offset-md-3 col-xxl-4 offset-xxl-4">
+        <div className="col-lg-6 offset-lg-3">
           <div className="card mb-5">
             <div className="card-body p-lg-4">
               <h4 className="card-title fw-bold mt-2 mb-4">Register</h4>
@@ -101,52 +49,43 @@ function Register() {
                 </div>
               )} */}
 
-              <form className="row g-2" onSubmit={handleSubmit}>
-                <div className="col-md-12 mb-2">
+              <form className="row g-3">
+                <div className="col-lg-6">
                   <Input
                     label="Full Name"
                     id="nameInput"
                     type="text"
                     name="fullName"
                     placeholder="Your full name"
-                    value={values.fullName}
-                    onChange={handleChange}
-                    error={errors.fullName}
                   />
                 </div>
-                <div className="col-md-12 mb-2">
+                <div className="col-lg-6">
                   <Input
                     label="Phone Number"
                     id="phoneInput"
                     type="tel"
                     name="phone"
                     placeholder="09xxxxxxxx"
-                    value={values.phone}
-                    onChange={handleChange}
-                    error={errors.phone}
+                    autoComplete="username"
                   />
                 </div>
-                <div className="col-md-12 mb-2">
+                <div className="col-md-12">
                   <PasswordInput
                     label="Password"
                     name="password"
                     placeholder="Minimum 8 characters"
-                    value={values.password}
-                    onChange={handleChange}
-                    error={errors.password}
+                    autoComplete="new-password"
                   />
                 </div>
-                <div className="col-md-12 mb-2">
+                <div className="col-md-12">
                   <PasswordInput
                     label="Confirm Password"
                     name="confirmPassword"
                     placeholder="Minimum 8 characters"
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    error={errors.confirmPassword}
+                    autoComplete="new-password"
                   />
                 </div>
-                <div className="col-md-12 mt-4 mb-2">
+                <div className="col-md-12 mt-4">
                   <button
                     type="submit"
                     className="btn btn-primary w-100 py-2h"
@@ -162,7 +101,7 @@ function Register() {
                     Sign up
                   </button>
                 </div>
-                <div className="col-md-12 mb-2">
+                <div className="col-md-12">
                   <div className="row g-2">
                     <div className="col">
                       <hr className="text-muted" />

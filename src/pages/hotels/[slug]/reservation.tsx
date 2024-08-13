@@ -41,11 +41,11 @@ function Reservation() {
                     style={{ height: 90, width: 120 }}
                   >
                     <Image
-                      className="p-2"
                       src="/images/bagan.jpeg"
                       alt=""
                       fill
                       priority
+                      sizes="50vh"
                     />
                   </div>
 
@@ -206,7 +206,6 @@ function Reservation() {
                           type="radio"
                           name="yesRadio"
                           id="yesRadio"
-                          value="yes"
                         />
                         <label className="form-check-label" htmlFor="yesRadio">
                           Yes
@@ -218,8 +217,6 @@ function Reservation() {
                           type="radio"
                           name="noRadio"
                           id="noRadio"
-                          value="no"
-                          checked
                         />
                         <label className="form-check-label" htmlFor="noRadio">
                           No
@@ -239,22 +236,22 @@ function Reservation() {
               </div>
               <div className="card-body">
                 <dl className="row">
-                  <dt className="col-sm-5 fw-semibold">{"Standard room"}</dt>
-                  <dd className="col-sm-7">{"130,000 Ks"}</dd>
-                  <dt className="col-sm-5 fw-semibold">{"Discount"}</dt>
-                  <dd className="col-sm-7 text-danger">{"-13,000 Ks"}</dd>
-                  <dt className="col-sm-5 fw-semibold">{"3 % TAX"}</dt>
-                  <dd className="col-sm-7">{"3,510 Ks"}</dd>
+                  <dt className="col-sm-5 fw-semibold">Standard room</dt>
+                  <dd className="col-sm-7 text-start text-sm-end">130,000 Ks</dd>
+                  <dt className="col-sm-5 fw-semibold">Discount</dt>
+                  <dd className="col-sm-7 text-danger text-start text-sm-end">13,000 Ks</dd>
+                  <dt className="col-sm-5 fw-semibold">TAX</dt>
+                  <dd className="col-sm-7 text-start text-sm-end">3,510 Ks</dd>
                   <dt className="col-sm-5 fw-semibold">
-                    {"10 % Service charge"}
+                    Service charge
                   </dt>
-                  <dd className="col-sm-7">{"11,700 Ks"}</dd>
+                  <dd className="col-sm-7 text-start text-sm-end">11,700 Ks</dd>
                 </dl>
                 <hr className="bg-dark-gray" />
-                <div className="row g-2">
-                  <dt className="col-sm-5 fw-semibold">{"Total price"}</dt>
-                  <dd className="col-sm-7">{"132,210 Ks"}</dd>
-                </div>
+                <dl className="row mb-0">
+                  <dt className="col-sm-5 fw-semibold">Total price</dt>
+                  <dd className="col-sm-7 text-start text-sm-end fw-semibold">132,210 Ks</dd>
+                </dl>
               </div>
               <div className="card-footer">
                 <div className="hstack">

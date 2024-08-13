@@ -1,6 +1,5 @@
 import { BuildingOfficeIcon } from "@heroicons/react/24/outline";
-import { InboxIcon, MoonIcon, UserGroupIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
+import { InboxIcon, UserGroupIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { formatTimestamp } from "../../../../common/utils";
 
@@ -22,38 +21,22 @@ function BookingCard() {
           </div>
         {/* <hr className="dark-gray" /> */}
         <div className="row g-3">
-          {/* <div className="col-sm-6 col-md-4">
-            <div className="vstack">
-              <span className="text-muted fw-light">Check-out</span>
-              <small className="mb-0 fw-medium">
-                {formatTimestamp(Date.now(), true)}
-              </small>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="vstack">
-              <span className="text-muted fw-light">Total Amount</span>
-              <small className="mb-0 fw-medium text-success">
-                200,000&nbsp;Ks
-              </small>
-            </div>
-          </div> */}
         </div>
       </div>
       <div className="card-footer bg-white">
-        <div className="hstack g-2 me-2 justify-content-around overflow-hidden py-1">
-          <div className="hstack gap-2">
-            <div className="bg-primary-dark rounded p-2 bg-opacity-25">
+        <div className="hstack gap-4 overflow-hidden py-1">
+          <div className="hstack">
+            <div className="bg-primary-dark rounded p-2 bg-opacity-25 me-2">
               <UserGroupIcon width={16} className="text-primary" />
             </div>
-            <small className="fw-medium">2</small>
+            <small className="fw-medium me-1">2x</small>
             <span className="text-muted fw-light">Guest</span>
           </div>
           <div className="hstack gap-2">
             <div className="bg-primary-dark rounded p-2 bg-opacity-25">
               <InboxIcon width={16} className="text-primary" />
             </div>
-            <small className="fw-medium">1</small>
+            <small className="fw-medium">1x</small>
             <span className="text-muted fw-light">Bed</span>
           </div>
         </div>
@@ -202,7 +185,7 @@ function BookingDetail() {
                     </div>
                   ))}
                 </div>
-                <hr className="dark-gray"/>
+                <hr className="text-dark-gray"/>
                 <div className="row">
                   <div className="ms-auto col-xl-4 col-lg-5 col-sm-7">
                     <table className="table">

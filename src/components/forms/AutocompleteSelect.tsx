@@ -6,7 +6,7 @@ import Input from "./Input";
 interface AutocompleteSelectProps<T = string, Key = string> {
   referenceId?: string;
   popperId?: string;
-  options?: readonly T[];
+  options?: readonly NonNullable<T>[];
   defaultValue?: T;
   placeholder?: string;
   maxHeight?: number;

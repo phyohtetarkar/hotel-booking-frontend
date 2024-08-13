@@ -1,93 +1,29 @@
-import { useFormik } from "formik";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useRef } from "react";
-import { AuthenticationContext } from "../common/contexts";
-import { Input, PasswordInput } from "../components/forms";
+import { Input, PasswordInput } from "@/components/forms";
+import { useForm } from "react-hook-form";
 
-interface FormValues {
+interface LoginFrom {
   phone?: string;
   password?: string;
 }
 
 function Login() {
-  const mountedRef = useRef(true);
   const router = useRouter();
-  const authContext = useContext(AuthenticationContext);
 
   const {
-    values,
-    errors,
-    handleChange,
-    handleSubmit,
-    isSubmitting,
-    setSubmitting
-  } = useFormik<FormValues>({
-    initialValues: {
-      phone: "",
-      password: ""
-    },
-    validate: (values) => {
-      let errors: FormValues = {};
+    control,
+    formState: { isSubmitting },
+  } = useForm();
 
-      const phoneRegex = "^(09)\\d{7,12}$";
-
-      if (!values.phone || !values.phone.match(phoneRegex)) {
-        errors.phone = "Please enter valid phone number.";
-      }
-
-      if (!values.password || values.password.trim().length == 0) {
-        errors.password = "Password enter password.";
-      }
-
-      return errors;
-    },
-    validateOnBlur: false,
-    validateOnChange: false,
-    onSubmit: (values) => {
-      processLogin(values);
-    }
-  });
-
-  useEffect(() => {
-    mountedRef.current = true;
-    return () => {
-      mountedRef.current = false;
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!router.isReady) {
-      return;
-    }
-
-    if (authContext.payload) {
-      router.replace("/");
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router, authContext]);
-
-  const processLogin = async (values: FormValues) => {
+  const processLogin = async (values: LoginFrom) => {
     try {
       const phone = `+95${values.phone!.substring(1)}`;
-
-      // const user = await login({
-      //   username: phone,
-      //   password: values.password!
-      // });
-      mountedRef.current && router.push("/");
     } catch (error: any) {
       console.log("error signing in:", error.code);
-    } finally {
-      mountedRef.current && setSubmitting(false);
     }
   };
-
-  // if (authContext.payload || authContext.status === "loading") {
-  //   return <div></div>;
-  // }
 
   return (
     <div className="container py-3">
@@ -103,7 +39,7 @@ function Login() {
                 </div>
               )} */}
 
-              <form className="row" onSubmit={handleSubmit}>
+              <form className="row">
                 <div className="col-md-12 mb-3">
                   <Input
                     label="Phone Number"
@@ -111,19 +47,15 @@ function Login() {
                     type="tel"
                     name="phone"
                     placeholder="09xxxxxxxx"
-                    value={values.phone}
-                    onChange={handleChange}
-                    error={errors.phone}
+                    autoComplete="username"
                   />
                 </div>
                 <div className="col-md-12 mb-2">
                   <PasswordInput
                     label="Password"
                     name="password"
-                    placeholder=""
-                    value={values.password}
-                    onChange={handleChange}
-                    error={errors.password}
+                    placeholder="Enter password"
+                    autoComplete="current-password"
                   />
                 </div>
                 <div className="col-md-12">
@@ -132,11 +64,7 @@ function Login() {
                   </Link>
                 </div>
                 <div className="col-md-12 mt-4 mb-2">
-                  <button
-                    type="submit"
-                    className="btn btn-primary w-100 py-2h"
-                    disabled={isSubmitting}
-                  >
+                  <button type="submit" className="btn btn-primary w-100 py-2h">
                     {isSubmitting && (
                       <span
                         className="spinner-border spinner-border-sm me-2"
@@ -166,7 +94,6 @@ function Login() {
                     <button
                       type="button"
                       className="btn btn-outline-light border w-50 d-flex align-items-center"
-                      disabled={isSubmitting}
                     >
                       <Image
                         src="/images/icons8-facebook-48.png"
@@ -180,7 +107,6 @@ function Login() {
                     <button
                       type="button"
                       className="btn btn-outline-light border w-50 d-flex align-items-center"
-                      disabled={isSubmitting}
                     >
                       <Image
                         src="/images/icons8-google-48.png"

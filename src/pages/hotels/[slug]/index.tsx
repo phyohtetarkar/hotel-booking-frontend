@@ -472,7 +472,7 @@ function HotelDetail() {
                                     Adult
                                   </h6>
                                   <div>
-                                    <div className="input-group">
+                                    <div className="input-group flex-nowrap">
                                       <button
                                         type="button"
                                         className="btn btn-outline-primary border-end-0"

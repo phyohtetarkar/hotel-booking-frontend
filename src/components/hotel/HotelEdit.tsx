@@ -163,7 +163,7 @@ function HotelEdit({ create = {} }) {
                   <h5 className="mb-0">Contacts</h5>
                   <div className="ms-auto">
                     <Link
-                      href=""
+                      href="#"
                       className="btn btn-primary"
                     >
                       Add new
@@ -248,7 +248,7 @@ function HotelEdit({ create = {} }) {
                   <h5 className="mb-0">Amenities/Facilities</h5>
                   <div className="ms-auto">
                     <Link
-                      href=""
+                      href="#"
                       className="btn btn-primary"
                     >
                       Add new

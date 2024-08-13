@@ -28,7 +28,7 @@ function RichTextEditor({
   return (
     <Editor
       id={id}
-      tinymceScriptSrc={`${location.origin}/tinymce/tinymce.min.js`}
+      tinymceScriptSrc={process.env.NEXT_PUBLIC_TINYMCE_SCRIPT_SOURCE}
       value=""
       onEditorChange={(newValue, editor) => {
         //formik.setFieldValue("body", newValue)

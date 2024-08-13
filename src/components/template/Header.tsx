@@ -98,7 +98,7 @@ function AccountMenu({ onNavClick }: { onNavClick?: () => void }) {
               objectFit="cover"
             />
           </div> */}
-                <span className="">Hi, {payload?.name ?? "Developer"}</span>
+                <span className="">Hi, {payload?.name ?? "User"}</span>
               </a>
               <ul
                 className="dropdown-menu dropdown-menu-end"
@@ -179,10 +179,6 @@ function Header({ hideAuth }: HeaderProps) {
         <div className="container">
           <div className="hstack w-100">
             <Link href="/" className="navbar-brand d-none d-lg-block">
-              {/* <FontAwesomeIcon
-                icon={["fas", "shopping-basket"]}
-                className="d-inline-block"
-              /> */}
               <div className="d-flex align-items-center">
                 {/* <Image
                 src="/images/logo_round.png"
@@ -190,9 +186,9 @@ function Header({ hideAuth }: HeaderProps) {
                 height={40}
                 alt=""
               /> */}
-                <h4 className="mb-0 fw-bold text-primary">
+                <h3 className="mb-0 fw-bold text-primary">
                   {process.env.NEXT_PUBLIC_APP_NAME}
-                </h4>
+                </h3>
               </div>
             </Link>
 

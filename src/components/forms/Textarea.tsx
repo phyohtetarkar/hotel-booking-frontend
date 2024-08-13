@@ -1,6 +1,12 @@
+import { ReactNode } from "react";
 import { InputProps } from "./Input";
 
-interface TextareaInputProps extends InputProps<HTMLTextAreaElement> {}
+interface TextareaInputProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement>  {
+  label?: ReactNode;
+  error?: string;
+  wrapperClass?: string;
+  height?: number;
+}
 
 function Textarea({
   label,

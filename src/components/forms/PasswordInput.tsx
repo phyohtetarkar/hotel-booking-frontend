@@ -1,22 +1,22 @@
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { formControlHeight } from "../../common/app.config";
 import { InputProps } from "./Input";
 
-interface PasswordInputProps extends InputProps<HTMLInputElement> {}
+interface PasswordInputProps extends InputProps {
+  label?: ReactNode;
+  error?: string;
+  wrapperClass?: string;
+  height?: number;
+}
 
 function PasswordInput({
   label,
+  type,
   id,
-  name,
-  placeholder,
-  disabled,
-  value,
-  defaultValue,
-  onChange,
-  onBlur,
   error,
-  height = formControlHeight
+  height = formControlHeight,
+  ...passThroughProps
 }: PasswordInputProps) {
   const [isPassword, setIsPassword] = useState(true);
 
@@ -27,17 +27,11 @@ function PasswordInput({
         <input
           id={id}
           type={isPassword ? "password" : "text"}
-          name={name}
           className={`form-control px-3 ${error ? "is-invalid" : ""}`}
-          placeholder={placeholder}
-          disabled={disabled}
-          value={value}
-          defaultValue={defaultValue}
-          onChange={onChange}
-          onBlur={onBlur}
           style={{
-            height: height
+            height: height,
           }}
+          {...passThroughProps}
         />
         <div
           className="input-group-text px-3"

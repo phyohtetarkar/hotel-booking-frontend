@@ -4,7 +4,8 @@ import {
   FocusEvent,
   forwardRef,
   HTMLInputTypeAttribute,
-  MouseEvent
+  MouseEvent,
+  ReactNode
 } from "react";
 import { formControlHeight } from "../../common/app.config";
 
@@ -12,8 +13,8 @@ type OnChange<E> = (e: ChangeEvent<E>) => void;
 type OnBlur<E> = (e: FocusEvent<E, Element>) => void;
 type OnClick<E> = (e: MouseEvent<E>) => void;
 
-export interface InputProps<ElementType> {
-  label?: string;
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>  {
+  label?: ReactNode;
   id?: string;
   name?: string;
   type?: HTMLInputTypeAttribute;
@@ -27,31 +28,18 @@ export interface InputProps<ElementType> {
   disabled?: boolean;
   readonly?: boolean;
   autoFocus?: boolean;
-  onChange?: OnChange<ElementType>;
-  onBlur?: OnBlur<ElementType>;
-  onClick?: OnClick<ElementType>;
 }
 
-const Input = forwardRef<HTMLInputElement, InputProps<HTMLInputElement>>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
     const {
       label,
       id,
-      type,
-      name,
-      placeholder,
-      disabled,
-      readonly,
-      autoFocus,
-      value,
-      defaultValue,
-      onChange,
-      onBlur,
-      onClick,
       error,
       className,
       style,
-      height = formControlHeight
+      height = formControlHeight,
+      ...passThroughProps
     } = props;
 
     return (
@@ -64,24 +52,14 @@ const Input = forwardRef<HTMLInputElement, InputProps<HTMLInputElement>>(
         <input
           ref={ref}
           id={id}
-          type={type}
-          name={name}
           className={`form-control px-3 ${error ? "is-invalid" : ""} ${
             className ?? ""
           }`}
-          placeholder={placeholder}
-          disabled={disabled}
-          readOnly={readonly}
-          autoFocus={autoFocus}
-          value={value}
-          defaultValue={defaultValue}
-          onChange={onChange}
-          onBlur={onBlur}
-          onClick={onClick}
           style={{
             ...style,
             height: height
           }}
+          {...passThroughProps}
         />
         {error && <div className="invalid-feedback">{error}</div>}
       </>
