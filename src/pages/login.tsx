@@ -96,7 +96,7 @@ function Login() {
                       className="btn btn-outline-light border w-50 d-flex align-items-center"
                     >
                       <Image
-                        src="/images/icons8-facebook-48.png"
+                        src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/icons8-facebook-48.png?alt=media"
                         alt="facebook"
                         width={28}
                         height={28}
@@ -109,7 +109,7 @@ function Login() {
                       className="btn btn-outline-light border w-50 d-flex align-items-center"
                     >
                       <Image
-                        src="/images/icons8-google-48.png"
+                        src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/icons8-google-48.png?alt=media"
                         alt="google"
                         width={28}
                         height={28}

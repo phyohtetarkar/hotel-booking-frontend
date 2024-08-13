@@ -18,7 +18,7 @@ export default function Home() {
     <div className="container py-4">
       <div className="position-relative p-4 pt-md-22">
         <Image
-          src={`/images/bagan.jpeg`}
+          src={`https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media`}
           alt=""
           fill
           sizes="100vw"

@@ -281,7 +281,7 @@ function HotelDetail() {
           <div className="col-lg-8">
             <div className="ratio ratio-16x9 d-lg-block">
               <Image
-                src="/images/bagan.jpeg"
+                src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media"
                 alt=""
                 fill
                 style={{ objectFit: "cover" }}

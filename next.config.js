@@ -16,6 +16,8 @@ const nextConfig = {
     ],
   },
   output: "export",
+  // basePath: "/hotel-booking-frontend",
+  // assetPrefix: "/hotel-booking-frontend/"
 };
 
 module.exports = nextConfig;

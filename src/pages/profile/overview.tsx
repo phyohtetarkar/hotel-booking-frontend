@@ -24,7 +24,7 @@ function ProfileOverview() {
                   <div className="hstack">
                     <div className="position-relative flex-shrink-0">
                       <Image
-                        src="/images/profile.png"
+                        src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/profile.png?alt=media"
                         width={60}
                         height={60}
                         alt=""

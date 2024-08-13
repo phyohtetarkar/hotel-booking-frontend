@@ -123,7 +123,7 @@ function Register() {
                       disabled={isSubmitting}
                     >
                       <Image
-                        src="/images/icons8-facebook-48.png"
+                        src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/icons8-facebook-48.png?alt=media"
                         alt="facebook"
                         width={28}
                         height={28}
@@ -137,7 +137,7 @@ function Register() {
                       disabled={isSubmitting}
                     >
                       <Image
-                        src="/images/icons8-google-48.png"
+                        src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/icons8-google-48.png?alt=media"
                         alt="google"
                         width={28}
                         height={28}

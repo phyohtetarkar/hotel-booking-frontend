@@ -33,7 +33,7 @@ function HotelItem() {
             >
               <Image
                 className="card-img-top rounded"
-                src={"/images/bagan.jpeg"}
+                src={"https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media"}
                 alt="Hotel image."
                 fill={true}
                 style={{ objectFit: "cover" }}

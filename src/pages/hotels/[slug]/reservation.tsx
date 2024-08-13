@@ -41,7 +41,7 @@ function Reservation() {
                     style={{ height: 90, width: 120 }}
                   >
                     <Image
-                      src="/images/bagan.jpeg"
+                      src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media"
                       alt=""
                       fill
                       priority

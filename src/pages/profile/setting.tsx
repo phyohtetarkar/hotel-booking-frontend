@@ -84,7 +84,7 @@ function ProfileSetting() {
                         style={{ width: 128, height: 128 }}
                       >
                         <Image
-                          src="/images/profile.png"
+                          src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/profile.png?alt=media"
                           alt="User Photo"
                           className="rounded-circle"
                           fill={true}

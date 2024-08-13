@@ -13,7 +13,7 @@ function RoomManageGridItem() {
           <div className="ratio ratio-4x3">
             <Image
               className="card-img-top"
-              src="/images/bagan.jpeg"
+              src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media"
               alt=""
               fill
               style={{ objectFit: "cover" }}

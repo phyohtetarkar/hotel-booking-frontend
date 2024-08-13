@@ -16,7 +16,7 @@ function HotelOverview() {
 
   const iconSize = 20;
 
-  let image = `/images/bagan.jpeg`;
+  let image = `https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media`;
 
   useEffect(() => {
     if (router.isReady) {

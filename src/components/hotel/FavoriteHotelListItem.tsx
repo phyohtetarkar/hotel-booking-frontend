@@ -7,7 +7,7 @@ function FavoriteHotelListItem() {
     <div className="card">
       <div className="ratio ratio-4x3 card-img-top d-block d-md-none">
         <Image
-          src="/images/bagan.jpeg"
+          src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media"
           className="card-img-top bg-light"
           alt=""
           fill
@@ -22,7 +22,7 @@ function FavoriteHotelListItem() {
             style={{ maxWidth: 180 }}
           >
             <Image
-              src="/images/bagan.jpeg"
+              src="https://firebasestorage.googleapis.com/v0/b/mocha-mart.appspot.com/o/bagan.jpeg?alt=media"
               className="bg-light"
               alt=""
               fill
